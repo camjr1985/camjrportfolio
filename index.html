@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=0f611ca0-0832-4632-a99e-187ada3a39a8
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carlos Alexandre Marques Jr. — Senior IT Programme Manager, Digital Transformation, Data & AI Governance, Programme Governance and Agile Delivery." />
+  <meta name="author" content="Carlos Alexandre Marques Junior" />
+  <meta property="og:title" content="Carlos Alexandre Marques Jr. — Executive Portfolio" />
+  <meta property="og:description" content="Senior IT Programme Manager | Digital Transformation | Data & AI Governance | Programme Governance | Agile Delivery" />
+  <meta property="og:type" content="website" />
+  <title>Carlos Alexandre Marques Jr. — Executive Portfolio</title>
+
+  <!-- ANALYTICS: create a free account and paste the tracking snippet here (see README "Analytics" section).
+       Recommended: Cloudflare Web Analytics — https://www.cloudflare.com/web-analytics/
+       Example once you have your token:
+       <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
+  -->
+
+  <style>
+    :root{
+      --navy:#0b1a31;
+      --navy2:#0e2039;
+      --gold:#c9992f;       /* decorative: borders, bars, large bold text */
+      --gold-ink:#8a6414;   /* AA-safe gold text on white */
+      --gold-bright:#f1c963;/* gold text/accents on dark panels */
+      --blue:#2f6fb0;
+      --ink:#0b1524;        /* headings on white */
+      --body-c:#3a4a63;     /* paragraph text on white */
+      --muted:#5b6b82;      /* secondary text on white */
+      --line:rgba(11,21,36,.12);
+      --text-on-dark:#f5f7fb;
+      --muted-on-dark:#9fb0c8;
+      --line-dark:rgba(255,255,255,.12);
+      --card:#ffffff;
+      --card-alt:#f6f8fb;
+      --shadow:0 20px 50px rgba(15,30,60,.09);
+      --radius:20px;
+      /* chart categorical palette — validated light-surface set (dataviz skill), fixed order */
+      --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#eda100; --c5:#e87ba4; --c6:#008300; --c7:#4a3aa7;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:#ffffff;
+      color:var(--body-c);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1440px,calc(100% - 72px));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,.86);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:.02em;color:var(--ink)}
+    .brand span{color:var(--gold-ink)}
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .lang button,.pill{
+      border:1px solid var(--line);background:#fff;color:var(--ink);
+      border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:700;font-size:.92rem
+    }
+    .lang button.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+    .pill.nav-active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    h1,h2,h3{color:var(--ink)}
+    .eyebrow{color:var(--gold-ink);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem}
+
+    /* ---- Hero + metrics (dark bookend panel, full-bleed) ---- */
+    .hero-panel{position:relative;background:var(--navy);border-top:5px solid var(--gold)}
+    .hero-inner{padding:44px 20px 30px;color:var(--text-on-dark)}
+    .avatar{display:block;width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid var(--gold-bright);box-shadow:0 10px 26px rgba(0,0,0,.35);margin-bottom:22px}
+    .hero-panel h1{font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.03;margin:14px 0 16px;letter-spacing:-.03em;color:var(--text-on-dark)}
+    .hero-panel .role{font-size:clamp(1rem,1.6vw,1.18rem);color:#c9d4e6;max-width:860px}
+    .gold-rule{border:none;border-top:1px solid rgba(241,201,99,.3);margin:22px 0}
+    .hero-panel .quote{color:#eef3fb;font-size:1.02rem;font-style:italic;max-width:860px}
+    .contact-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .contact-row a,.contact-row .cta{
+      display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-dark);
+      padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);color:var(--text-on-dark);font-size:.92rem
+    }
+    .contact-row a.book-link{background:var(--gold-bright);color:#241a04;border-color:var(--gold-bright);font-weight:800}
+    .contact-row a.book-link:hover{filter:brightness(1.06)}
+    .metrics-band{background:var(--navy2);padding:22px 0;border-top:1px solid var(--line-dark)}
+    .metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .metric{text-align:center}
+    .metric b{font-size:1.9rem;display:block;color:var(--gold-bright)}
+    .metric span{color:var(--muted-on-dark);font-size:.82rem}
+
+    section{padding:44px 0}
+    .section-title{display:grid;grid-template-columns:.62fr 1.38fr;gap:28px;margin-bottom:24px}
+    .section-title h2{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.05;margin:0;letter-spacing:-.03em}
+    .section-title p{margin:4px 0 0;color:var(--muted);max-width:860px}
+    .section-title .eyebrow{display:block;margin-bottom:10px}
+
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:1.02rem;color:var(--ink)}
+    .card p{color:var(--muted);margin:0;font-size:.94rem}
+
+    /* ---- Publication (dark accent panel, full-bleed) — two-up "Latest Publications" cards ---- */
+    .publication{
+      background:linear-gradient(135deg,var(--navy),#0b1628 70%);
+      border-top:1px solid rgba(201,153,47,.35);border-bottom:1px solid rgba(201,153,47,.35);
+    }
+    .pub-cards{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:40px 0}
+    .pub-card{padding:0 38px;color:var(--text-on-dark)}
+    .pub-card:first-child{padding-left:0;border-right:1px solid var(--line-dark)}
+    .pub-card:last-child{padding-right:0}
+    .pub-card .tagline{color:var(--gold-bright);font-weight:800;letter-spacing:.08em;font-size:.72rem;text-transform:uppercase;margin-bottom:10px}
+    .pub-card .venue-date{color:#9fb0c8;font-size:.86rem;margin:6px 0 16px}
+    .pub-card h2{font-size:1.5rem;line-height:1.14;margin:0 0 14px;color:var(--text-on-dark);letter-spacing:-.02em}
+    .pub-card .doi{display:inline-block;color:var(--gold-bright);font-weight:800;margin:0 0 16px}
+    .pub-card p{color:#c7d2e2;margin:0}
+    .pub-card .tags{margin-top:16px}
+    .pub-card .cta{margin-top:20px}
+    .pub-copy h2{color:var(--text-on-dark)}
+    .pub-copy p{color:#c7d2e2}
+    .pub-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .cta{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-dark);padding:11px 15px;border-radius:12px;background:rgba(255,255,255,.06);color:var(--text-on-dark)}
+    .cta.primary{background:var(--gold-bright);color:#241a04;border-color:var(--gold-bright);font-weight:850}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .tag{padding:7px 10px;border-radius:999px;border:1px solid var(--line-dark);color:#cbd6e4;font-size:.85rem}
+
+    /* ---- Full publications list (light, data-driven) ---- */
+    .pub-list-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:36px 0 16px}
+    .pub-list-head h3{margin:0;font-size:1.1rem;color:var(--ink)}
+    .pub-list-head a{color:var(--gold-ink);font-weight:700;font-size:.9rem;white-space:nowrap}
+    .pub-list{display:grid;gap:12px}
+    .pub-item{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:var(--card-alt)}
+    .pub-item .pub-when{color:var(--gold-ink);font-weight:800;font-size:.85rem;line-height:1.3}
+    .pub-item .pub-when .venue{display:block;color:var(--muted);font-weight:600;margin-top:2px}
+    .pub-item h4{margin:0 0 6px;font-size:1rem;color:var(--ink)}
+    .pub-item p{margin:0;color:var(--muted);font-size:.9rem}
+    .pub-item .pub-link{display:inline-block;margin-top:10px;color:var(--gold-ink);font-weight:700;font-size:.86rem}
+    @media(max-width:900px){.pub-item{grid-template-columns:1fr}}
+
+    /* ---- Expertise (light) ---- */
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skills span{padding:10px 13px;border:1px solid var(--line);border-radius:12px;background:var(--card-alt);color:var(--ink);font-size:.9rem}
+
+    /* ---- Timeline (light cards) ---- */
+    .timeline{display:grid;gap:14px}
+    .job{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--card-alt)}
+    .job .time{color:var(--gold-ink);font-weight:800;font-size:.92rem}
+    .job h3{margin:0 0 4px;font-size:1.05rem}
+    .job .role-title{display:block;color:var(--body-c);font-weight:700;font-size:.92rem;margin:0 0 8px}
+    .job ul{margin:0;padding-left:18px;color:var(--muted)}
+    .job li{margin:4px 0}
+
+    footer{padding:0}
+    .small{color:var(--muted-on-dark);font-size:.9rem}
+
+    /* ---- Workstream donut (drill-down) ---- */
+    .ws-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+    .donut-figure{position:relative;width:min(260px,100%);margin:auto}
+    .donut-figure svg{width:100%;height:auto;display:block}
+    .donut-seg{fill:none;stroke-linecap:butt;cursor:pointer;transition:opacity .2s ease,stroke-width .2s ease}
+    .donut-track{fill:none;stroke:rgba(11,21,36,.08)}
+    .donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+    .donut-center b{font-size:2rem;color:var(--ink);line-height:1}
+    .donut-center span{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+    .ws-legend{display:grid;gap:10px}
+    .legend-btn{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);
+      background:var(--card-alt);border-radius:12px;padding:11px 15px;color:var(--ink);cursor:pointer;
+      font:inherit;transition:background .2s ease,border-color .2s ease}
+    .legend-btn:hover{background:#eef1f6}
+    .legend-btn.active{background:#fff;border-color:var(--gold);box-shadow:0 4px 16px rgba(201,153,47,.18)}
+    .legend-btn .dot{width:12px;height:12px;border-radius:50%;flex:none}
+    .legend-btn .pct{margin-left:auto;font-weight:800;color:var(--gold-ink)}
+    .ws-detail{margin-top:26px;padding:24px 26px;border:1px solid var(--line);border-radius:18px;background:var(--card-alt)}
+    .ws-detail[hidden]{display:none}
+    .ws-detail h4{margin:0 0 12px;color:var(--gold-ink);font-size:1.02rem}
+    .ws-detail ul{margin:0;padding-left:20px;color:var(--body-c)}
+    .ws-detail li{margin:6px 0}
+    .ws-placeholder{text-align:center}
+    .ws-placeholder p{margin:0;color:var(--muted);font-style:italic}
+    details.table-toggle{margin-top:20px;color:var(--muted);font-size:.9rem}
+    details.table-toggle summary{cursor:pointer;color:var(--gold-ink);font-weight:700}
+    details.table-toggle table{width:100%;border-collapse:collapse;margin-top:12px}
+    details.table-toggle td,details.table-toggle th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;color:var(--body-c)}
+
+    /* ---- Selected project highlights (light cards, gold top border) ---- */
+    .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .proj-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .proj-card h3{margin:0 0 4px;font-size:1.05rem}
+    .proj-card .role-title{display:block;color:var(--gold-ink);font-weight:700;font-size:.86rem;margin:0 0 12px}
+    .proj-card .meta{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:.9rem}
+    .proj-card .budget{color:var(--gold-ink);font-weight:800;margin-top:10px;font-size:.94rem}
+    .proj-card .years{color:var(--muted);font-size:.8rem;margin-top:12px;border-top:1px solid var(--line);padding-top:10px;letter-spacing:.03em;text-transform:uppercase}
+
+    /* ---- Tools & technology line chart (light card) ---- */
+    .tools-chart-wrap{background:var(--card-alt);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+    .tools-chart-wrap svg{width:100%;height:auto;display:block}
+    .tools-legend{display:flex;flex-wrap:wrap;gap:14px 20px;margin-top:18px}
+    .tools-legend .item{display:flex;align-items:center;gap:8px;color:var(--body-c);font-size:.88rem}
+    .tools-legend .dot{width:10px;height:10px;border-radius:50%;flex:none}
+    .axis-label{fill:var(--muted);font-size:10px}
+    .grid-line{stroke:rgba(11,21,36,.08)}
+
+    /* ---- Global reach (dark accent panel, full-bleed) ---- */
+    .reach-panel{background:var(--navy)}
+    .reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:40px 0}
+    .reach-col h3{margin:0 0 20px;font-size:.94rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-bright)}
+    .bar-row{margin-bottom:18px}
+    .bar-row:last-child{margin-bottom:0}
+    .bar-row .bar-label{display:flex;justify-content:space-between;margin-bottom:7px;font-weight:700;color:var(--text-on-dark)}
+    .bar-row .bar-label span:last-child{color:var(--gold-bright)}
+    .bar-track{height:8px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--gold-bright))}
+    .lang-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--text-on-dark)}
+    .lang-row:last-child{margin-bottom:0}
+    .lang-dots{display:flex;gap:4px}
+    .lang-dots span{width:20px;height:6px;border-radius:999px;background:rgba(255,255,255,.14)}
+    .lang-dots span.filled{background:linear-gradient(90deg,var(--blue),var(--gold-bright))}
+    .lang-level{color:var(--gold-bright);font-size:.82rem;font-weight:700;margin-left:12px}
+
+    /* ---- Education + certifications + footer (closing dark panel, full-bleed) ---- */
+    .edu-panel{background:var(--navy);border-top:5px solid var(--gold);padding:48px 0}
+    .edu-panel .section-title{margin-bottom:26px}
+    .edu-panel .section-title h2{color:var(--text-on-dark)}
+    .edu-panel .section-title p{color:var(--muted-on-dark)}
+    .edu-card{background:rgba(255,255,255,.05);border:1px solid var(--line-dark);border-radius:14px;padding:20px}
+    .edu-card .tag{margin-bottom:10px;display:inline-block}
+    .edu-card h3{margin:0 0 6px;font-size:1rem;color:var(--text-on-dark)}
+    .edu-card p{margin:0;color:var(--muted-on-dark);font-size:.9rem}
+    .cert-eyebrow{color:var(--gold-bright);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;margin:30px 0 14px}
+    .dark-skills span{background:rgba(255,255,255,.05);border-color:var(--line-dark);color:var(--text-on-dark)}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end;margin-top:34px}
+    .footer-grid h3{font-size:1.3rem;margin:8px 0 6px;color:var(--text-on-dark);letter-spacing:-.01em}
+
+    @media(max-width:900px){
+      .pub-cards,.section-title,.ws-wrap,.reach-grid,.grid-4,.proj-grid{grid-template-columns:1fr}
+      .grid-4,.proj-grid{grid-template-columns:1fr 1fr}
+      .metric-grid{grid-template-columns:repeat(2,1fr)}
+      .pub-card{padding:0!important;border-right:0!important;border-bottom:1px solid var(--line-dark);padding-bottom:28px!important;margin-bottom:28px}
+      .pub-card:last-child{border-bottom:0;padding-bottom:0!important;margin-bottom:0}
+      .job{grid-template-columns:1fr}
+      .hero-inner{padding:36px 20px 26px}
+      .metrics-band{padding:20px 0}
+      .edu-panel{padding:36px 0}
+    }
+    @media(max-width:560px){
+      .wrap{width:min(100% - 24px,1440px)}
+      .grid-4,.metric-grid,.proj-grid{grid-template-columns:1fr}
+      .nav-inner{height:auto;padding:12px 0;align-items:flex-start}
+      .pub-art h3{font-size:2rem}
+      .reach-grid{padding:26px 0}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">CARLOS <span>ALEXANDRE</span></div>
+    <div class="nav-actions">
+      <div class="lang">
+        <button class="active" data-lang="en">EN</button>
+        <button data-lang="pt">PT</button>
+        <button data-lang="es">ES</button>
+      </div>
+      <a class="pill" href="#workstream" data-i18n="navProjects">Projects</a>
+      <a class="pill" href="#experience" data-i18n="navExperience">Experience</a>
+      <a class="pill" href="#publication" data-i18n="navPublication">Publication</a>
+      <a class="pill" href="#contact" data-i18n="navContact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero-panel">
+  <div class="wrap hero-inner">
+    <img class="avatar" src="assets/carlos-alexandre-profile.jpg" alt="Carlos Alexandre Marques Junior" />
+    <div class="eyebrow" style="color:var(--gold-bright)" data-i18n="eyebrow">Senior Executive Profile</div>
+    <h1>Carlos Alexandre<br/>Marques Jr.</h1>
+    <div class="role" data-i18n="role">Senior IT Programme Manager · Digital Transformation · Data & AI Governance · Programme Governance · Agile Delivery</div>
+    <div class="contact-row">
+      <a href="tel:+5511910940909">☎ +55 11 91094-0909</a>
+      <a href="mailto:carlosalexandrejunior@gmail.com">✉ carlosalexandrejunior@gmail.com</a>
+      <a href="https://www.linkedin.com/in/carlosalexandremarquesjr" target="_blank" rel="noopener">in LinkedIn</a>
+      <a href="https://orcid.org/0009-0008-4738-3156" target="_blank" rel="noopener">iD ORCID</a>
+      <span class="cta">📍 <span data-i18n="location">São Paulo, Brazil</span></span>
+      <a class="book-link" href="https://camjr1985.github.io/superando-obstaculos/" target="_blank" rel="noopener" data-i18n="bookBtn">📘 My Book: Superando Obstáculos</a>
+    </div>
+    <hr class="gold-rule"/>
+    <div class="quote" data-i18n="quote">“I transform strategy into value through leadership, governance and execution excellence.”</div>
+  </div>
+  <div class="metrics-band">
+    <div class="wrap metric-grid">
+      <div class="metric"><b>26+</b><span data-i18n="m1">Years Experience</span></div>
+      <div class="metric"><b>60+</b><span data-i18n="m2">Projects Delivered</span></div>
+      <div class="metric"><b>300+</b><span data-i18n="m3">Professionals Led</span></div>
+      <div class="metric"><b>10+</b><span data-i18n="m4">Countries Impacted</span></div>
+      <div class="metric"><b>R$1B+</b><span data-i18n="m5">Portfolio Value</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="section-title">
+      <h2 data-i18n="summaryTitle">Strategic Transformation Leader</h2>
+      <p data-i18n="summaryText">Senior IT Programme Manager with 26+ years of experience leading enterprise-wide digital transformation across Banking, Financial Services, Insurance and Technology. I connect executive strategy, governance, delivery and people leadership to turn complex initiatives into measurable business value.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card"><h3 data-i18n="c1t">Programme Leadership</h3><p data-i18n="c1p">End-to-end programme lifecycle, business discovery, RAID management, Steering Committees and business readiness.</p></div>
+      <div class="card"><h3 data-i18n="c2t">Strategic Impact</h3><p data-i18n="c2p">Connecting technology investment to business outcomes across digital, data, cloud and platform transformation.</p></div>
+      <div class="card"><h3 data-i18n="c3t">Operational Excellence</h3><p data-i18n="c3p">Agile, Waterfall, ITIL and governance practices in complex and regulated environments.</p></div>
+      <div class="card"><h3 data-i18n="c4t">People & Culture</h3><p data-i18n="c4p">Building and mentoring high-performing international teams of 40–300+ professionals across Brazil, Portugal, Luxembourg, the UK and LATAM.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="workstream">
+  <div class="wrap">
+    <div class="section-title">
+      <div>
+        <div class="eyebrow" data-i18n="wsEyebrow">Experience by Workstream</div>
+        <h2 data-i18n="wsTitle">60+ Projects — Click to Explore</h2>
+      </div>
+      <p data-i18n="wsText">A breakdown of 26+ years of delivery across the workstreams that define my programme leadership. Select a segment to see representative projects and clients.</p>
+    </div>
+
+    <div class="ws-wrap">
+      <div class="donut-figure">
+        <svg viewBox="0 0 220 220" role="img" aria-label="60+ projects by workstream">
+          <g transform="rotate(-90 110 110)">
+            <circle class="donut-track" cx="110" cy="110" r="80" stroke-width="28"/>
+            <circle id="seg-delivery" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c1)" stroke-width="28" stroke-dasharray="137.74 364.92" stroke-dashoffset="0"/>
+            <circle id="seg-infra" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c2)" stroke-width="28" stroke-dasharray="87.48 415.18" stroke-dashoffset="-140.74"/>
+            <circle id="seg-digital" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c3)" stroke-width="28" stroke-dasharray="72.40 430.26" stroke-dashoffset="-231.22"/>
+            <circle id="seg-cyber" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c4)" stroke-width="28" stroke-dasharray="57.32 445.34" stroke-dashoffset="-306.62"/>
+            <circle id="seg-appdelivery" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c5)" stroke-width="28" stroke-dasharray="47.27 455.39" stroke-dashoffset="-366.94"/>
+            <circle id="seg-data" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c6)" stroke-width="28" stroke-dasharray="42.24 460.42" stroke-dashoffset="-417.21"/>
+            <circle id="seg-grc" class="donut-seg" cx="110" cy="110" r="80" stroke="var(--c7)" stroke-width="28" stroke-dasharray="37.21 465.45" stroke-dashoffset="-462.45"/>
+          </g>
+        </svg>
+        <div class="donut-center"><b>60+</b><span data-i18n="donutCenter">Projects</span></div>
+      </div>
+
+      <div class="ws-legend">
+        <button class="legend-btn" data-cat="delivery"><span class="dot" style="background:var(--c1)"></span><span data-i18n="wsDeliveryLabel">Service Delivery & IT Ops</span><span class="pct">28%</span></button>
+        <button class="legend-btn" data-cat="infra"><span class="dot" style="background:var(--c2)"></span><span data-i18n="wsInfraLabel">Infrastructure & Cloud</span><span class="pct">18%</span></button>
+        <button class="legend-btn" data-cat="digital"><span class="dot" style="background:var(--c3)"></span><span data-i18n="wsDigitalLabel">Digital Transformation</span><span class="pct">15%</span></button>
+        <button class="legend-btn" data-cat="cyber"><span class="dot" style="background:var(--c4)"></span><span data-i18n="wsCyberLabel">Cybersecurity</span><span class="pct">12%</span></button>
+        <button class="legend-btn" data-cat="appdelivery"><span class="dot" style="background:var(--c5)"></span><span data-i18n="wsAppLabel">Application Delivery</span><span class="pct">10%</span></button>
+        <button class="legend-btn" data-cat="data"><span class="dot" style="background:var(--c6)"></span><span data-i18n="wsDataLabel">Data & Analytics</span><span class="pct">9%</span></button>
+        <button class="legend-btn" data-cat="grc"><span class="dot" style="background:var(--c7)"></span><span data-i18n="wsGrcLabel">Governance, Risk & Compliance</span><span class="pct">8%</span></button>
+      </div>
+    </div>
+
+    <div class="ws-detail ws-placeholder" id="wsPlaceholder">
+      <p data-i18n="wsPlaceholder">Click a segment or a workstream below to see representative projects and clients.</p>
+    </div>
+    <div class="ws-detail" data-cat="delivery" hidden>
+      <h4 data-i18n="wsDeliveryLabel">Service Delivery & IT Ops</h4>
+      <ul>
+        <li data-i18n="wsDeliveryB1">Claranet / Elementis — IT operations and NOC/SOC transition across 8+ clients</li>
+        <li data-i18n="wsDeliveryB2">BEAM TEAM — distributed delivery operations for a 40-person team</li>
+        <li data-i18n="wsDeliveryB3">Santander — day-to-day infrastructure and platform operations</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="infra" hidden>
+      <h4 data-i18n="wsInfraLabel">Infrastructure & Cloud</h4>
+      <ul>
+        <li data-i18n="wsInfraB1">Santander — Cash Platform Migration, AWS & SQL Server, R$150M</li>
+        <li data-i18n="wsInfraB2">IBM — SQL Server on AWS for Pix and Credit products</li>
+        <li data-i18n="wsInfraB3">Claranet — Azure migrations, Netskope and MS365 rollouts</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="digital" hidden>
+      <h4 data-i18n="wsDigitalLabel">Digital Transformation</h4>
+      <ul>
+        <li data-i18n="wsDigitalB1">Banco Carrefour — native banking app migration, 90 developers, R$80M</li>
+        <li data-i18n="wsDigitalB2">EDP / DECSKILL — DataHub GEN renewable-generation data platform</li>
+        <li data-i18n="wsDigitalB3">IBM / Itaú — LATAM digital transformation programmes</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="cyber" hidden>
+      <h4 data-i18n="wsCyberLabel">Cybersecurity</h4>
+      <ul>
+        <li data-i18n="wsCyberB1">Claranet / Elementis — NOC/SOC transformation and security operations</li>
+        <li data-i18n="wsCyberB2">Patching and infrastructure governance across 8+ regulated clients</li>
+        <li data-i18n="wsCyberB3">Security operations aligned to ITIL and COBIT frameworks</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="appdelivery" hidden>
+      <h4 data-i18n="wsAppLabel">Application Delivery</h4>
+      <ul>
+        <li data-i18n="wsAppB1">Santander — Travel & Reimbursement App, 20 developers, R$115M</li>
+        <li data-i18n="wsAppB2">SIBS — CRM Dynamics and BRM migration, initiation to completion</li>
+        <li data-i18n="wsAppB3">Legacy Oracle-based engineering system, 40 developers, R$215M</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="data" hidden>
+      <h4 data-i18n="wsDataLabel">Data & Analytics</h4>
+      <ul>
+        <li data-i18n="wsDataB1">EDP / DECSKILL — DataHub GEN and renewable-generation data initiatives</li>
+        <li data-i18n="wsDataB2">Power BI reporting and executive dashboards across programmes</li>
+        <li data-i18n="wsDataB3">Research publication on Data & AI Governance (DOI 10.5281/zenodo.21908743)</li>
+      </ul>
+    </div>
+    <div class="ws-detail" data-cat="grc" hidden>
+      <h4 data-i18n="wsGrcLabel">Governance, Risk & Compliance</h4>
+      <ul>
+        <li data-i18n="wsGrcB1">PMO governance and RAID management across 60+ projects</li>
+        <li data-i18n="wsGrcB2">ITIL / COBIT frameworks in regulated financial services</li>
+        <li data-i18n="wsGrcB3">Steering Committee reporting and executive stakeholder governance</li>
+      </ul>
+    </div>
+
+    <details class="table-toggle">
+      <summary data-i18n="tableToggle">View as table</summary>
+      <table>
+        <thead><tr><th data-i18n="wsTableCol1">Workstream</th><th data-i18n="wsTableCol2">Share of 60+ projects</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n="wsDeliveryLabel">Service Delivery & IT Ops</td><td>28%</td></tr>
+          <tr><td data-i18n="wsInfraLabel">Infrastructure & Cloud</td><td>18%</td></tr>
+          <tr><td data-i18n="wsDigitalLabel">Digital Transformation</td><td>15%</td></tr>
+          <tr><td data-i18n="wsCyberLabel">Cybersecurity</td><td>12%</td></tr>
+          <tr><td data-i18n="wsAppLabel">Application Delivery</td><td>10%</td></tr>
+          <tr><td data-i18n="wsDataLabel">Data & Analytics</td><td>9%</td></tr>
+          <tr><td data-i18n="wsGrcLabel">Governance, Risk & Compliance</td><td>8%</td></tr>
+        </tbody>
+      </table>
+    </details>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="wrap">
+    <div class="section-title">
+      <div>
+        <div class="eyebrow" data-i18n="hlEyebrow">Selected Project Highlights</div>
+        <h2 data-i18n="hlTitle">Enterprise Impact at Scale</h2>
+      </div>
+      <p data-i18n="hlText">A selection of programmes spanning energy, banking, insurance and technology — with the scope and scale behind each engagement.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <h3>EDP / DECSKILL</h3>
+        <span class="role-title">Programme & Data Governance Lead</span>
+        <div class="meta"><span>📍 Portugal</span><span>💼 Energy · Data & AI Governance</span></div>
+        <div class="years">2026 – PRESENT</div>
+      </div>
+      <div class="proj-card">
+        <h3>CLARANET / ELEMENTIS</h3>
+        <span class="role-title">Project Manager / Delivery Manager</span>
+        <div class="meta"><span>📍 Multi-country · Portugal</span><span>💼 Cloud, NOC & SOC Transformation</span></div>
+        <div class="years">2025 – 2026</div>
+      </div>
+      <div class="proj-card">
+        <h3>BEAM TEAM / DENNEMEYER</h3>
+        <span class="role-title">Project Manager / Scrum Master</span>
+        <div class="meta"><span>📍 Portugal · Luxembourg</span><span>💼 IP Management & Technology</span></div>
+        <div class="years">2024 – 2025</div>
+      </div>
+      <div class="proj-card">
+        <h3>SIBS</h3>
+        <span class="role-title">Delivery Manager</span>
+        <div class="meta"><span>📍 Portugal</span><span>💼 Financial Services · Payments</span></div>
+        <div class="years">2023 – 2024</div>
+      </div>
+      <div class="proj-card">
+        <h3>BANCO CARREFOUR</h3>
+        <span class="role-title">Project Manager / Agile Coach</span>
+        <div class="meta"><span>📍 Brazil</span><span>💼 Banking · Retail Finance</span></div>
+        <div class="budget">R$84M+</div>
+        <div class="years">2022 – 2023</div>
+      </div>
+      <div class="proj-card">
+        <h3>IBM / ITAÚ</h3>
+        <span class="role-title">Project Manager</span>
+        <div class="meta"><span>📍 LATAM · Brazil</span><span>💼 Financial Services · Adtech</span></div>
+        <div class="budget">R$124M</div>
+        <div class="years">2021 – 2022</div>
+      </div>
+      <div class="proj-card" style="grid-column:1/-1;max-width:calc(50% - 8px)">
+        <h3>SANTANDER</h3>
+        <span class="role-title">IT Project Manager</span>
+        <div class="meta"><span>📍 Brazil</span><span>💼 Banking · Infrastructure</span></div>
+        <div class="budget">R$480M+</div>
+        <div class="years">2019 – 2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publication">
+  <div class="wrap">
+    <div class="section-title">
+      <h2 data-i18n="pubSectionTitle">Latest Publications</h2>
+      <p data-i18n="pubSectionText">The two most recent research-backed executive perspectives — on data governance as a business decision, and on why Zero Trust programmes fail when the starting point is wrong.</p>
+    </div>
+  </div>
+  <div class="publication">
+    <div class="wrap pub-cards">
+      <div class="pub-card">
+        <div class="tagline" data-i18n="trustBefore">TRUST BEFORE INTELLIGENCE</div>
+        <div class="venue-date">Zenodo · 13 ago 2026 · CC BY 4.0</div>
+        <h2 data-i18n="pubTitle">Governança de dados não é projeto de TI — é decisão de negócio</h2>
+        <a class="doi" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener">DOI: 10.5281/zenodo.21908743</a>
+        <p data-i18n="pubDesc">The publication connects Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance and executive decision-making around one central idea: trust is the real data infrastructure of the digital enterprise.</p>
+        <div class="tags">
+          <span class="tag">Data Governance</span><span class="tag">AI Governance</span><span class="tag">Data Strategy</span><span class="tag">Data Quality</span><span class="tag">Leadership</span>
+        </div>
+        <a class="cta primary" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener" data-i18n="readZenodo">Read on Zenodo</a>
+      </div>
+      <div class="pub-card">
+        <div class="tagline" data-i18n="pub2Tagline">START WHERE TRUST ALREADY LIVES</div>
+        <div class="venue-date">Zenodo · 14 ago 2026 · CC BY 4.0</div>
+        <h2 data-i18n="pub2Title">Zero Trust falha nos primeiros seis meses por decisão errada de onde começar</h2>
+        <!-- PENDING: swap for the real DOI once you send it, e.g. https://doi.org/10.5281/zenodo.XXXXXXX -->
+        <a class="doi" href="https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/" target="_blank" rel="noopener" data-i18n="pub2DoiLabel">DOI: coming soon — view on LinkedIn</a>
+        <p data-i18n="pub2Desc">Marques Junior, Carlos Alexandre (Project Manager). Full abstract pending — send it over and I'll drop it in here to match the Data Governance card.</p>
+        <div class="tags">
+          <span class="tag">Zero Trust</span><span class="tag">Cybersecurity</span><span class="tag">Programme Governance</span>
+        </div>
+        <a class="cta primary" href="https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/" target="_blank" rel="noopener" data-i18n="pub2Cta">View on LinkedIn</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="pub-actions" style="padding-bottom:40px">
+        <a class="cta" href="https://orcid.org/0009-0008-4738-3156" target="_blank" rel="noopener" data-i18n="viewOrcid">View ORCID Profile</a>
+        <a class="cta" href="https://www.linkedin.com/in/carlosalexandremarquesjr" target="_blank" rel="noopener" data-i18n="followLinkedIn">Follow on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pub-list-head">
+      <h3 data-i18n="pubListTitle">All Publications</h3>
+      <a href="https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/" target="_blank" rel="noopener" data-i18n="pubListLinkedIn">View full list on LinkedIn →</a>
+    </div>
+    <div class="pub-list" id="pubList"><!-- rendered by renderPublications() from the PUBLICATIONS array below --></div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="section-title">
+      <h2 data-i18n="expertiseTitle">Executive Expertise</h2>
+      <p data-i18n="expertiseText">A multidisciplinary leadership profile connecting programme governance, digital transformation, data, cloud, cybersecurity and agile execution.</p>
+    </div>
+    <div class="skills">
+      <span>Programme & Portfolio Management</span><span>PMO Governance</span><span>Digital Transformation</span>
+      <span>Data & AI Governance</span><span>Cloud & Infrastructure</span><span>Cybersecurity</span>
+      <span>ITIL / COBIT</span><span>SAFe / Scrum / Kanban</span><span>Azure / AWS</span><span>Databricks</span>
+      <span>DevOps / CI-CD</span><span>Executive Stakeholder Management</span><span>CAPEX / OPEX</span><span>Risk & Compliance</span>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="section-title">
+      <div>
+        <div class="eyebrow" data-i18n="toolsEyebrow">Tools & Technology</div>
+        <h2 data-i18n="toolsTitle">Experience Level Over Time</h2>
+      </div>
+      <p data-i18n="toolsText">Proficiency growth across core delivery, cloud and reporting tools as experience accumulates.</p>
+    </div>
+    <div class="tools-chart-wrap">
+      <svg id="toolsSvg" viewBox="0 0 640 300" role="img" aria-label="Tool proficiency by years of experience"></svg>
+      <div class="tools-legend" id="toolsLegend"></div>
+    </div>
+    <details class="table-toggle">
+      <summary data-i18n="tableToggle">View as table</summary>
+      <table id="toolsTable">
+        <thead><tr><th>Tool</th><th>0–2</th><th>2–5</th><th>5–10</th><th>10–15</th><th>15–20</th><th>20+</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </details>
+  </div>
+</section>
+
+<section id="reach">
+  <div class="wrap">
+    <div class="section-title">
+      <div>
+        <div class="eyebrow" data-i18n="reachEyebrow">Geographical & Language Profile</div>
+        <h2 data-i18n="reachTitle">Global Reach</h2>
+      </div>
+      <p data-i18n="reachText">Programmes delivered across regions, and the languages that support executive stakeholder engagement.</p>
+    </div>
+  </div>
+  <div class="reach-panel">
+    <div class="wrap reach-grid">
+      <div class="reach-col">
+        <h3 data-i18n="regionsLabel">Regions</h3>
+        <div class="bar-row"><div class="bar-label"><span data-i18n="regionEurope">Europe</span><span>38%</span></div><div class="bar-track"><div class="bar-fill" style="width:38%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span data-i18n="regionSouthAmerica">South America</span><span>24%</span></div><div class="bar-track"><div class="bar-fill" style="width:24%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span data-i18n="regionNorthAmerica">North America</span><span>16%</span></div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span data-i18n="regionAsia">Asia</span><span>14%</span></div><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span data-i18n="regionAfrica">Africa</span><span>8%</span></div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></div>
+      </div>
+      <div class="reach-col">
+        <h3 data-i18n="languagesLabel">Languages</h3>
+        <div class="lang-row"><span data-i18n="langPortuguese">Portuguese</span><span style="display:flex;align-items:center"><span class="lang-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></span><span class="lang-level" data-i18n="levelNative">Native</span></span></div>
+        <div class="lang-row"><span data-i18n="langEnglish">English</span><span style="display:flex;align-items:center"><span class="lang-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span><span class="lang-level" data-i18n="levelAdvanced">Advanced</span></span></div>
+        <div class="lang-row"><span data-i18n="langSpanish">Spanish</span><span style="display:flex;align-items:center"><span class="lang-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></span><span class="lang-level" data-i18n="levelIntermediate">Intermediate</span></span></div>
+        <div class="lang-row"><span data-i18n="langFrench">French</span><span style="display:flex;align-items:center"><span class="lang-dots"><span class="filled"></span><span class="filled"></span><span></span><span></span><span></span></span><span class="lang-level" data-i18n="levelBasic">Basic</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-title">
+      <h2 data-i18n="expTitle">Selected Experience</h2>
+      <p data-i18n="expText">A career built across technology, financial services, insurance, infrastructure and enterprise transformation.</p>
+    </div>
+    <div class="timeline">
+      <div class="job">
+        <div class="time">2026 – PRESENT</div>
+        <div><h3>EDP / DECSKILL</h3><span class="role-title" data-i18n="j1role">Programme & Data Governance Lead</span>
+          <ul><li data-i18n="j1a">Leadership across DataHub GEN and renewable-generation data initiatives</li><li data-i18n="j1b">Bridging governance, delivery, data platforms and executive stakeholders</li><li data-i18n="j1c">Applying Data & AI Governance principles to enterprise energy data programmes</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2025 – 2026</div>
+        <div><h3>Claranet (via IQBE)</h3><span class="role-title" data-i18n="j2role">Project Manager / Delivery Manager</span>
+          <ul><li data-i18n="j2a">Led cloud, NOC & SOC transformation for Elementis and 8+ clients</li><li data-i18n="j2b">Applied SAFe, ITIL, COBIT across regulated environments</li><li data-i18n="j2c">Managed Azure migrations, Netskope and MS365 rollouts</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2024 – 2025</div>
+        <div><h3>BEAM TEAM (Lisbon / Luxembourg)</h3><span class="role-title" data-i18n="j3role">Project Manager / Scrum Master</span>
+          <ul><li data-i18n="j3a">Directed a distributed team of 40 across Backend, Frontend and DevOps</li><li data-i18n="j3b">Executed SAFe, Scrum and Kanban delivery frameworks</li><li data-i18n="j3c">Oversaw infrastructure: data centre, cloud, TCP/IP, PowerShell/Python</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2023 – 2024</div>
+        <div><h3>SIBS (Lisbon)</h3><span class="role-title" data-i18n="j4role">Delivery Manager</span>
+          <ul><li data-i18n="j4a">Led enterprise transformation in regulated financial services</li><li data-i18n="j4b">Acted as hybrid PM & Business Analyst: requirements, solution definition, programme delivery</li><li data-i18n="j4c">Delivered CRM Dynamics and BRM migration from initiation to completion</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2022 – 2023</div>
+        <div><h3>Banco Carrefour (Brazil)</h3><span class="role-title" data-i18n="j5role">Project Manager / Agile Coach</span>
+          <ul><li data-i18n="j5a">Led the Agile Master Team — Atendimento & Retenção Tribes</li><li data-i18n="j5b">Delivered native banking app migration: 90 developers, R$80M, 15 months</li><li data-i18n="j5c">Drove 20% market share growth via Agile transformation</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2021 – 2022</div>
+        <div><h3>IBM (LATAM)</h3><span class="role-title" data-i18n="j6role">Project Manager</span>
+          <ul><li data-i18n="j6a">Managed LATAM Project Audit: R$120M, 12 months</li><li data-i18n="j6b">Deployed SQL Server on AWS for Pix and Credit products</li><li data-i18n="j6c">Acted as Agile Coach across NPS, ROI and Lead Time metrics</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2019 – 2021</div>
+        <div><h3>Santander (Brazil)</h3><span class="role-title" data-i18n="j7role">IT Project Manager</span>
+          <ul><li data-i18n="j7a">Oversaw large-scale banking technology projects across infrastructure and cloud (AWS, SQL Server)</li><li data-i18n="j7b">Cash Platform Migration: 20 developers, R$150M, 15 months</li><li data-i18n="j7c">Travel & Reimbursement App: 20 developers, R$115M, 9 months</li></ul>
+        </div>
+      </div>
+      <div class="job">
+        <div class="time">2000 – 2019</div>
+        <div><h3>Bionexo · Magna · MV · TOTVS · Others</h3><span class="role-title" data-i18n="j8role">Project & Technology Leadership</span>
+          <ul><li data-i18n="j8a">Oracle-based engineering system: 40 developers, R$215M, 9 months</li><li data-i18n="j8b">Project and technology leadership across healthcare, public sector, construction and mining</li><li data-i18n="j8c">Foundation years building programme, delivery and stakeholder management expertise</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="edu-panel">
+    <div class="wrap">
+      <div class="section-title">
+        <div>
+          <div class="eyebrow" style="color:var(--gold-bright)" data-i18n="eduEyebrow">Education</div>
+          <h2 data-i18n="eduTitle">Academic Foundation</h2>
+        </div>
+        <p data-i18n="eduText">Continuous learning across technology, strategy, project management, data and digital leadership.</p>
+      </div>
+      <div class="grid-4" style="gap:14px">
+        <div class="edu-card"><span class="tag" data-i18n="intlDiploma">International Diploma</span><h3>Master BI & Big Data</h3><p>ENEB · Barcelona · 2024</p></div>
+        <div class="edu-card"><h3>Master Digital Manager</h3><p>Ibmec / Exame · 2023</p></div>
+        <div class="edu-card"><span class="tag" data-i18n="intlDiploma">International Diploma</span><h3>MBA Project Management</h3><p>FGV · Rio de Janeiro · 2015</p></div>
+        <div class="edu-card"><h3>BSc Computer Science</h3><p>Pitágoras · Brazil · 2012</p></div>
+      </div>
+      <div class="cert-eyebrow" data-i18n="certEyebrow">Professional Certifications</div>
+      <div class="skills dark-skills">
+        <span>PMP</span><span>SAFe® 5 Agilist</span><span>SAFe Scrum Master</span><span>PSM I</span><span>PSPO I</span><span>ISMF</span><span>IPOF</span><span>PMEC</span>
+      </div>
+      <hr class="gold-rule"/>
+      <div class="footer-grid" id="contact">
+        <div>
+          <div class="eyebrow" style="color:var(--gold-bright)" data-i18n="footerEyebrow">Leading Transformation · Delivering Value · Building the Future</div>
+          <h3 data-i18n="footerTitle">Open to executive technology and transformation opportunities.</h3>
+          <div class="small"><span data-i18n="location">São Paulo, Brazil</span> · 2026</div>
+        </div>
+        <div class="pub-actions">
+          <a class="cta primary" href="mailto:carlosalexandrejunior@gmail.com" data-i18n="emailMe">Email me</a>
+          <a class="cta" href="https://camjr1985.github.io/superando-obstaculos/" target="_blank" rel="noopener" data-i18n="bookBtn">📘 My Book: Superando Obstáculos</a>
+          <a class="cta" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ---------------- i18n ---------------- */
+const i18n={
+en:{
+location:"São Paulo, Brazil",bookBtn:"📘 My Book: Superando Obstáculos",
+navProjects:"Projects",navExperience:"Experience",navPublication:"Publication",navContact:"Contact",eyebrow:"Senior Executive Profile",
+role:"Senior IT Programme Manager · Digital Transformation · Data & AI Governance · Programme Governance · Agile Delivery",
+quote:"“I transform strategy into value through leadership, governance and execution excellence.”",
+m1:"Years Experience",m2:"Projects Delivered",m3:"Professionals Led",m4:"Countries Impacted",m5:"Portfolio Value",
+summaryTitle:"Strategic Transformation Leader",
+summaryText:"Senior IT Programme Manager with 26+ years of experience leading enterprise-wide digital transformation across Banking, Financial Services, Insurance and Technology. I connect executive strategy, governance, delivery and people leadership to turn complex initiatives into measurable business value.",
+c1t:"Programme Leadership",c1p:"End-to-end programme lifecycle, business discovery, RAID management, Steering Committees and business readiness.",
+c2t:"Strategic Impact",c2p:"Connecting technology investment to business outcomes across digital, data, cloud and platform transformation.",
+c3t:"Operational Excellence",c3p:"Agile, Waterfall, ITIL and governance practices in complex and regulated environments.",
+c4t:"People & Culture",c4p:"Building and mentoring high-performing international teams of 40–300+ professionals across Brazil, Portugal, Luxembourg, the UK and LATAM.",
+wsEyebrow:"Experience by Workstream",wsTitle:"60+ Projects — Click to Explore",
+wsText:"A breakdown of 26+ years of delivery across the workstreams that define my programme leadership. Select a segment to see representative projects and clients.",
+donutCenter:"Projects",tableToggle:"View as table",
+wsPlaceholder:"Click a segment or a workstream below to see representative projects and clients.",
+wsTableCol1:"Workstream",wsTableCol2:"Share of 60+ projects",
+wsDeliveryLabel:"Service Delivery & IT Ops",wsInfraLabel:"Infrastructure & Cloud",wsDigitalLabel:"Digital Transformation",
+wsCyberLabel:"Cybersecurity",wsAppLabel:"Application Delivery",wsDataLabel:"Data & Analytics",wsGrcLabel:"Governance, Risk & Compliance",
+wsDeliveryB1:"Claranet / Elementis — IT operations and NOC/SOC transition across 8+ clients",
+wsDeliveryB2:"BEAM TEAM — distributed delivery operations for a 40-person team",
+wsDeliveryB3:"Santander — day-to-day infrastructure and platform operations",
+wsInfraB1:"Santander — Cash Platform Migration, AWS & SQL Server, R$150M",
+wsInfraB2:"IBM — SQL Server on AWS for Pix and Credit products",
+wsInfraB3:"Claranet — Azure migrations, Netskope and MS365 rollouts",
+wsDigitalB1:"Banco Carrefour — native banking app migration, 90 developers, R$80M",
+wsDigitalB2:"EDP / DECSKILL — DataHub GEN renewable-generation data platform",
+wsDigitalB3:"IBM / Itaú — LATAM digital transformation programmes",
+wsCyberB1:"Claranet / Elementis — NOC/SOC transformation and security operations",
+wsCyberB2:"Patching and infrastructure governance across 8+ regulated clients",
+wsCyberB3:"Security operations aligned to ITIL and COBIT frameworks",
+wsAppB1:"Santander — Travel & Reimbursement App, 20 developers, R$115M",
+wsAppB2:"SIBS — CRM Dynamics and BRM migration, initiation to completion",
+wsAppB3:"Legacy Oracle-based engineering system, 40 developers, R$215M",
+wsDataB1:"EDP / DECSKILL — DataHub GEN and renewable-generation data initiatives",
+wsDataB2:"Power BI reporting and executive dashboards across programmes",
+wsDataB3:"Research publication on Data & AI Governance (DOI 10.5281/zenodo.21908743)",
+wsGrcB1:"PMO governance and RAID management across 60+ projects",
+wsGrcB2:"ITIL / COBIT frameworks in regulated financial services",
+wsGrcB3:"Steering Committee reporting and executive stakeholder governance",
+hlEyebrow:"Selected Project Highlights",hlTitle:"Enterprise Impact at Scale",
+hlText:"A selection of programmes spanning energy, banking, insurance and technology — with the scope and scale behind each engagement.",
+pubSectionTitle:"Latest Publications",pubSectionText:"The two most recent research-backed executive perspectives — on data governance as a business decision, and on why Zero Trust programmes fail when the starting point is wrong.",
+trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Data Governance",
+pubEyebrow:"Scientific & Executive Publication",
+pub2Tagline:"START WHERE TRUST ALREADY LIVES",
+pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
+pub2DoiLabel:"DOI: coming soon — view on LinkedIn",
+pub2Desc:"Marques Junior, Carlos Alexandre (Project Manager). Full abstract pending — send it over and I'll drop it in here to match the Data Governance card.",
+pub2Cta:"View on LinkedIn",
+pubTitle:"Data Governance is not an IT project — it is a business decision",
+pubDesc:"The publication connects Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance and executive decision-making around one central idea: trust is the real data infrastructure of the digital enterprise.",
+readZenodo:"Read on Zenodo",followLinkedIn:"Follow on LinkedIn",viewOrcid:"View ORCID Profile",
+pubListTitle:"All Publications",pubListLinkedIn:"View full list on LinkedIn →",pubViewLink:"View publication",
+expertiseTitle:"Executive Expertise",expertiseText:"A multidisciplinary leadership profile connecting programme governance, digital transformation, data, cloud, cybersecurity and agile execution.",
+toolsEyebrow:"Tools & Technology",toolsTitle:"Experience Level Over Time",
+toolsText:"Proficiency growth across core delivery, cloud and reporting tools as experience accumulates.",
+reachEyebrow:"Geographical & Language Profile",reachTitle:"Global Reach",
+reachText:"Programmes delivered across regions, and the languages that support executive stakeholder engagement.",
+regionsLabel:"Regions",languagesLabel:"Languages",
+regionEurope:"Europe",regionSouthAmerica:"South America",regionNorthAmerica:"North America",regionAsia:"Asia",regionAfrica:"Africa",
+langPortuguese:"Portuguese",langEnglish:"English",langSpanish:"Spanish",langFrench:"French",
+levelNative:"Native",levelAdvanced:"Advanced",levelIntermediate:"Intermediate",levelBasic:"Basic",
+expTitle:"Selected Experience",expText:"A career built across technology, financial services, insurance, infrastructure and enterprise transformation.",
+j1role:"Programme & Data Governance Lead",
+j1a:"Leadership across DataHub GEN and renewable-generation data initiatives",
+j1b:"Bridging governance, delivery, data platforms and executive stakeholders",
+j1c:"Applying Data & AI Governance principles to enterprise energy data programmes",
+j2role:"Project Manager / Delivery Manager",
+j2a:"Led cloud, NOC & SOC transformation for Elementis and 8+ clients",
+j2b:"Applied SAFe, ITIL, COBIT across regulated environments",
+j2c:"Managed Azure migrations, Netskope and MS365 rollouts",
+j3role:"Project Manager / Scrum Master",
+j3a:"Directed a distributed team of 40 across Backend, Frontend and DevOps",
+j3b:"Executed SAFe, Scrum and Kanban delivery frameworks",
+j3c:"Oversaw infrastructure: data centre, cloud, TCP/IP, PowerShell/Python",
+j4role:"Delivery Manager",
+j4a:"Led enterprise transformation in regulated financial services",
+j4b:"Acted as hybrid PM & Business Analyst: requirements, solution definition, programme delivery",
+j4c:"Delivered CRM Dynamics and BRM migration from initiation to completion",
+j5role:"Project Manager / Agile Coach",
+j5a:"Led the Agile Master Team — Atendimento & Retenção Tribes",
+j5b:"Delivered native banking app migration: 90 developers, R$80M, 15 months",
+j5c:"Drove 20% market share growth via Agile transformation",
+j6role:"Project Manager",
+j6a:"Managed LATAM Project Audit: R$120M, 12 months",
+j6b:"Deployed SQL Server on AWS for Pix and Credit products",
+j6c:"Acted as Agile Coach across NPS, ROI and Lead Time metrics",
+j7role:"IT Project Manager",
+j7a:"Oversaw large-scale banking technology projects across infrastructure and cloud (AWS, SQL Server)",
+j7b:"Cash Platform Migration: 20 developers, R$150M, 15 months",
+j7c:"Travel & Reimbursement App: 20 developers, R$115M, 9 months",
+j8role:"Project & Technology Leadership",
+j8a:"Oracle-based engineering system: 40 developers, R$215M, 9 months",
+j8b:"Project and technology leadership across healthcare, public sector, construction and mining",
+j8c:"Foundation years building programme, delivery and stakeholder management expertise",
+eduEyebrow:"Education",eduTitle:"Academic Foundation",eduText:"Continuous learning across technology, strategy, project management, data and digital leadership.",
+certEyebrow:"Professional Certifications",
+intlDiploma:"International Diploma",
+footerEyebrow:"Leading Transformation · Delivering Value · Building the Future",
+footerTitle:"Open to executive technology and transformation opportunities.",emailMe:"Email me"
+},
+pt:{
+location:"São Paulo, Brasil",bookBtn:"📘 Meu Livro: Superando Obstáculos",
+navProjects:"Projetos",navExperience:"Experiência",navPublication:"Publicação",navContact:"Contacto",eyebrow:"Perfil Executivo",
+role:"Senior IT Programme Manager · Transformação Digital · Data & AI Governance · Programme Governance · Agile Delivery",
+quote:"“Transformo estratégia em valor através de liderança, governança e excelência na execução.”",
+m1:"Anos de Experiência",m2:"Projetos Entregues",m3:"Profissionais Liderados",m4:"Países Impactados",m5:"Valor de Portfólio",
+summaryTitle:"Líder de Transformação Estratégica",
+summaryText:"Senior IT Programme Manager com 26+ anos de experiência em transformação digital de larga escala nos setores Bancário, Financeiro, Seguros e Tecnologia. Conecto estratégia executiva, governança, entrega e liderança de pessoas para transformar iniciativas complexas em valor de negócio mensurável.",
+c1t:"Liderança de Programas",c1p:"Ciclo end-to-end, discovery, gestão RAID, Steering Committees e preparação do negócio.",
+c2t:"Impacto Estratégico",c2p:"Ligação entre investimento tecnológico e resultados de negócio em digital, dados, cloud e plataformas.",
+c3t:"Excelência Operacional",c3p:"Agile, Waterfall, ITIL e práticas de governança em ambientes complexos e regulados.",
+c4t:"Pessoas & Cultura",c4p:"Construção e mentoria de equipas internacionais de alta performance com 40–300+ profissionais no Brasil, Portugal, Luxemburgo, Reino Unido e LATAM.",
+wsEyebrow:"Experiência por Área de Atuação",wsTitle:"60+ Projetos — Clique para Explorar",
+wsText:"Um raio-x de 26+ anos de entrega distribuídos pelas áreas que definem a minha liderança de programas. Selecione um segmento para ver projetos e clientes representativos.",
+donutCenter:"Projetos",tableToggle:"Ver como tabela",
+wsPlaceholder:"Clique num segmento ou numa área abaixo para ver projetos e clientes representativos.",
+wsTableCol1:"Área de atuação",wsTableCol2:"Percentagem de 60+ projetos",
+wsDeliveryLabel:"Service Delivery & IT Ops",wsInfraLabel:"Infraestrutura & Cloud",wsDigitalLabel:"Transformação Digital",
+wsCyberLabel:"Cibersegurança",wsAppLabel:"Entrega de Aplicações",wsDataLabel:"Dados & Analytics",wsGrcLabel:"Governança, Risco & Compliance",
+wsDeliveryB1:"Claranet / Elementis — operações de TI e transição NOC/SOC para 8+ clientes",
+wsDeliveryB2:"BEAM TEAM — operações de entrega distribuídas para uma equipa de 40 pessoas",
+wsDeliveryB3:"Santander — operações diárias de infraestrutura e plataforma",
+wsInfraB1:"Santander — Migração da Plataforma de Caixa, AWS & SQL Server, R$150M",
+wsInfraB2:"IBM — SQL Server na AWS para os produtos Pix e Crédito",
+wsInfraB3:"Claranet — migrações para Azure, Netskope e implementação do MS365",
+wsDigitalB1:"Banco Carrefour — migração do app bancário nativo, 90 developers, R$80M",
+wsDigitalB2:"EDP / DECSKILL — plataforma de dados DataHub GEN para geração renovável",
+wsDigitalB3:"IBM / Itaú — programas de transformação digital na LATAM",
+wsCyberB1:"Claranet / Elementis — transformação NOC/SOC e operações de segurança",
+wsCyberB2:"Patching e governança de infraestrutura em 8+ clientes regulados",
+wsCyberB3:"Operações de segurança alinhadas aos frameworks ITIL e COBIT",
+wsAppB1:"Santander — App de Viagens & Reembolsos, 20 developers, R$115M",
+wsAppB2:"SIBS — migração CRM Dynamics e BRM, do início à conclusão",
+wsAppB3:"Sistema de engenharia legado em Oracle, 40 developers, R$215M",
+wsDataB1:"EDP / DECSKILL — DataHub GEN e iniciativas de dados de geração renovável",
+wsDataB2:"Relatórios em Power BI e dashboards executivos em vários programas",
+wsDataB3:"Publicação científica sobre Data & AI Governance (DOI 10.5281/zenodo.21908743)",
+wsGrcB1:"Governança de PMO e gestão de RAID em 60+ projetos",
+wsGrcB2:"Frameworks ITIL / COBIT em serviços financeiros regulados",
+wsGrcB3:"Reporting para Steering Committees e governança de stakeholders executivos",
+hlEyebrow:"Projetos em Destaque",hlTitle:"Impacto Empresarial em Escala",
+hlText:"Uma seleção de programas em energia, banca, seguros e tecnologia — com o escopo e a escala por trás de cada projeto.",
+pubSectionTitle:"Publicações Recentes",pubSectionText:"As duas publicações mais recentes com visão executiva fundamentada — sobre governança de dados como decisão de negócio, e sobre por que programas de Zero Trust falham quando o ponto de partida está errado.",
+trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Governança de Dados",
+pubEyebrow:"Publicação Científica & Executiva",
+pub2Tagline:"COMECE ONDE A CONFIANÇA JÁ EXISTE",
+pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
+pub2DoiLabel:"DOI: em breve — ver no LinkedIn",
+pub2Desc:"Marques Junior, Carlos Alexandre (Project Manager). Resumo completo pendente — assim que você mandar, eu coloco aqui no mesmo padrão do card de Governança de Dados.",
+pub2Cta:"Ver no LinkedIn",
+pubTitle:"Governança de dados não é projeto de TI — é decisão de negócio",
+pubDesc:"A publicação conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance e decisão executiva em torno de uma ideia central: confiança é a verdadeira infraestrutura de dados da empresa digital.",
+readZenodo:"Ler no Zenodo",followLinkedIn:"Seguir no LinkedIn",viewOrcid:"Ver Perfil ORCID",
+pubListTitle:"Todas as Publicações",pubListLinkedIn:"Ver lista completa no LinkedIn →",pubViewLink:"Ver publicação",
+expertiseTitle:"Especialidades Executivas",expertiseText:"Um perfil multidisciplinar que conecta governança de programas, transformação digital, dados, cloud, cibersegurança e execução ágil.",
+toolsEyebrow:"Ferramentas & Tecnologia",toolsTitle:"Nível de Experiência ao Longo do Tempo",
+toolsText:"Evolução da proficiência nas principais ferramentas de entrega, cloud e reporting ao longo da experiência.",
+reachEyebrow:"Perfil Geográfico & de Idiomas",reachTitle:"Alcance Global",
+reachText:"Programas entregues em várias regiões, e os idiomas que sustentam a relação com stakeholders executivos.",
+regionsLabel:"Regiões",languagesLabel:"Idiomas",
+regionEurope:"Europa",regionSouthAmerica:"América do Sul",regionNorthAmerica:"América do Norte",regionAsia:"Ásia",regionAfrica:"África",
+langPortuguese:"Português",langEnglish:"Inglês",langSpanish:"Espanhol",langFrench:"Francês",
+levelNative:"Nativo",levelAdvanced:"Avançado",levelIntermediate:"Intermédio",levelBasic:"Básico",
+expTitle:"Experiência Selecionada",expText:"Uma carreira construída em tecnologia, serviços financeiros, seguros, infraestrutura e transformação empresarial.",
+j1role:"Programme & Data Governance Lead",
+j1a:"Liderança em DataHub GEN e iniciativas de dados de geração renovável",
+j1b:"Conectando governança, delivery, plataformas de dados e stakeholders executivos",
+j1c:"Aplicação de princípios de Data & AI Governance a programas de dados no setor energético",
+j2role:"Project Manager / Delivery Manager",
+j2a:"Liderança da transformação de cloud, NOC & SOC para a Elementis e 8+ clientes",
+j2b:"Aplicação de SAFe, ITIL e COBIT em ambientes regulados",
+j2c:"Gestão de migrações para Azure, Netskope e implementação do MS365",
+j3role:"Project Manager / Scrum Master",
+j3a:"Direção de uma equipa distribuída de 40 pessoas em Backend, Frontend e DevOps",
+j3b:"Execução de frameworks SAFe, Scrum e Kanban",
+j3c:"Gestão de infraestrutura: datacenter, cloud, TCP/IP, PowerShell/Python",
+j4role:"Delivery Manager",
+j4a:"Liderança de transformação empresarial em serviços financeiros regulados",
+j4b:"Atuação como PM & Business Analyst híbrido: requisitos, definição de solução, entrega do programa",
+j4c:"Entrega da migração CRM Dynamics e BRM do início à conclusão",
+j5role:"Project Manager / Agile Coach",
+j5a:"Liderança da Agile Master Team — Tribes de Atendimento & Retenção",
+j5b:"Entrega da migração do app bancário nativo: 90 developers, R$80M, 15 meses",
+j5c:"Crescimento de 20% em market share através de transformação Agile",
+j6role:"Project Manager",
+j6a:"Gestão da Auditoria de Projetos LATAM: R$120M, 12 meses",
+j6b:"Implementação de SQL Server na AWS para os produtos Pix e Crédito",
+j6c:"Atuação como Agile Coach em métricas de NPS, ROI e Lead Time",
+j7role:"IT Project Manager",
+j7a:"Supervisão de projetos bancários de grande escala em infraestrutura e cloud (AWS, SQL Server)",
+j7b:"Migração da Plataforma de Caixa: 20 developers, R$150M, 15 meses",
+j7c:"App de Viagens & Reembolsos: 20 developers, R$115M, 9 meses",
+j8role:"Project & Technology Leadership",
+j8a:"Sistema de engenharia legado em Oracle: 40 developers, R$215M, 9 meses",
+j8b:"Liderança de projetos e tecnologia em saúde, setor público, construção e mineração",
+j8c:"Anos de base na construção de competências em programas, entrega e gestão de stakeholders",
+eduEyebrow:"Formação",eduTitle:"Base Académica",eduText:"Aprendizagem contínua em tecnologia, estratégia, gestão de projetos, dados e liderança digital.",
+certEyebrow:"Certificações Profissionais",
+intlDiploma:"Diploma Internacional",
+footerEyebrow:"Liderar Transformação · Entregar Valor · Construir o Futuro",
+footerTitle:"Disponível para oportunidades executivas em tecnologia e transformação.",emailMe:"Enviar email"
+},
+es:{
+location:"São Paulo, Brasil",bookBtn:"📘 Mi Libro: Superando Obstáculos",
+navProjects:"Proyectos",navExperience:"Experiencia",navPublication:"Publicación",navContact:"Contacto",eyebrow:"Perfil Ejecutivo",
+role:"Senior IT Programme Manager · Transformación Digital · Data & AI Governance · Programme Governance · Agile Delivery",
+quote:"“Transformo estrategia en valor a través de liderazgo, gobierno y excelencia en la ejecución.”",
+m1:"Años de Experiencia",m2:"Proyectos Entregados",m3:"Profesionales Liderados",m4:"Países Impactados",m5:"Valor de Portafolio",
+summaryTitle:"Líder de Transformación Estratégica",
+summaryText:"Senior IT Programme Manager con 26+ años de experiencia liderando transformación digital a escala empresarial en Banca, Servicios Financieros, Seguros y Tecnología. Conecto estrategia ejecutiva, gobierno, delivery y liderazgo de personas para convertir iniciativas complejas en valor de negocio medible.",
+c1t:"Liderazgo de Programas",c1p:"Ciclo end-to-end, business discovery, gestión RAID, Steering Committees y preparación del negocio.",
+c2t:"Impacto Estratégico",c2p:"Conectando inversión tecnológica con resultados de negocio en digital, datos, cloud y plataformas.",
+c3t:"Excelencia Operacional",c3p:"Agile, Waterfall, ITIL y prácticas de gobierno en entornos complejos y regulados.",
+c4t:"Personas & Cultura",c4p:"Construcción y mentoría de equipos internacionales de alto rendimiento con 40–300+ profesionales en Brasil, Portugal, Luxemburgo, Reino Unido y LATAM.",
+wsEyebrow:"Experiencia por Área de Trabajo",wsTitle:"60+ Proyectos — Haga Clic para Explorar",
+wsText:"Un desglose de 26+ años de entrega distribuidos en las áreas que definen mi liderazgo de programas. Seleccione un segmento para ver proyectos y clientes representativos.",
+donutCenter:"Proyectos",tableToggle:"Ver como tabla",
+wsPlaceholder:"Haga clic en un segmento o en un área abajo para ver proyectos y clientes representativos.",
+wsTableCol1:"Área de trabajo",wsTableCol2:"Porcentaje de 60+ proyectos",
+wsDeliveryLabel:"Service Delivery & IT Ops",wsInfraLabel:"Infraestructura & Cloud",wsDigitalLabel:"Transformación Digital",
+wsCyberLabel:"Ciberseguridad",wsAppLabel:"Entrega de Aplicaciones",wsDataLabel:"Datos & Analytics",wsGrcLabel:"Gobierno, Riesgo & Cumplimiento",
+wsDeliveryB1:"Claranet / Elementis — operaciones de TI y transición NOC/SOC para 8+ clientes",
+wsDeliveryB2:"BEAM TEAM — operaciones de entrega distribuidas para un equipo de 40 personas",
+wsDeliveryB3:"Santander — operaciones diarias de infraestructura y plataforma",
+wsInfraB1:"Santander — Migración de la Plataforma de Caja, AWS & SQL Server, R$150M",
+wsInfraB2:"IBM — SQL Server en AWS para los productos Pix y Crédito",
+wsInfraB3:"Claranet — migraciones a Azure, Netskope e implementación de MS365",
+wsDigitalB1:"Banco Carrefour — migración de app bancaria nativa, 90 developers, R$80M",
+wsDigitalB2:"EDP / DECSKILL — plataforma de datos DataHub GEN para generación renovable",
+wsDigitalB3:"IBM / Itaú — programas de transformación digital en LATAM",
+wsCyberB1:"Claranet / Elementis — transformación NOC/SOC y operaciones de seguridad",
+wsCyberB2:"Patching y gobierno de infraestructura en 8+ clientes regulados",
+wsCyberB3:"Operaciones de seguridad alineadas con los marcos ITIL y COBIT",
+wsAppB1:"Santander — App de Viajes & Reembolsos, 20 developers, R$115M",
+wsAppB2:"SIBS — migración CRM Dynamics y BRM, de inicio a fin",
+wsAppB3:"Sistema de ingeniería heredado en Oracle, 40 developers, R$215M",
+wsDataB1:"EDP / DECSKILL — DataHub GEN e iniciativas de datos de generación renovable",
+wsDataB2:"Reportes en Power BI y dashboards ejecutivos en varios programas",
+wsDataB3:"Publicación científica sobre Data & AI Governance (DOI 10.5281/zenodo.21908743)",
+wsGrcB1:"Gobierno de PMO y gestión de RAID en 60+ proyectos",
+wsGrcB2:"Marcos ITIL / COBIT en servicios financieros regulados",
+wsGrcB3:"Reporting para Steering Committees y gobierno de stakeholders ejecutivos",
+hlEyebrow:"Proyectos Destacados",hlTitle:"Impacto Empresarial a Escala",
+hlText:"Una selección de programas en energía, banca, seguros y tecnología — con el alcance y la escala detrás de cada proyecto.",
+pubSectionTitle:"Publicaciones Recientes",pubSectionText:"Las dos publicaciones más recientes con perspectiva ejecutiva fundamentada — sobre el gobierno de datos como decisión de negocio, y sobre por qué los programas de Zero Trust fallan cuando el punto de partida es incorrecto.",
+trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Gobierno de Datos",
+pubEyebrow:"Publicación Científica & Ejecutiva",
+pub2Tagline:"EMPIECE DONDE YA EXISTE CONFIANZA",
+pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
+pub2DoiLabel:"DOI: próximamente — ver en LinkedIn",
+pub2Desc:"Marques Junior, Carlos Alexandre (Project Manager). Resumen completo pendiente — en cuanto lo envíes, lo coloco aquí con el mismo formato de la tarjeta de Gobierno de Datos.",
+pub2Cta:"Ver en LinkedIn",
+pubTitle:"La gobernanza de datos no es un proyecto de TI — es una decisión de negocio",
+pubDesc:"La publicación conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance y la toma de decisiones ejecutivas en torno a una idea central: la confianza es la verdadera infraestructura de datos de la empresa digital.",
+readZenodo:"Leer en Zenodo",followLinkedIn:"Seguir en LinkedIn",viewOrcid:"Ver Perfil ORCID",
+pubListTitle:"Todas las Publicaciones",pubListLinkedIn:"Ver lista completa en LinkedIn →",pubViewLink:"Ver publicación",
+expertiseTitle:"Especialidades Ejecutivas",expertiseText:"Un perfil multidisciplinario que conecta gobierno de programas, transformación digital, datos, cloud, ciberseguridad y ejecución ágil.",
+toolsEyebrow:"Herramientas & Tecnología",toolsTitle:"Nivel de Experiencia a lo Largo del Tiempo",
+toolsText:"Evolución de la competencia en las principales herramientas de entrega, cloud y reporting a lo largo de la experiencia.",
+reachEyebrow:"Perfil Geográfico & de Idiomas",reachTitle:"Alcance Global",
+reachText:"Programas entregados en distintas regiones, y los idiomas que sostienen la relación con stakeholders ejecutivos.",
+regionsLabel:"Regiones",languagesLabel:"Idiomas",
+regionEurope:"Europa",regionSouthAmerica:"América del Sur",regionNorthAmerica:"América del Norte",regionAsia:"Asia",regionAfrica:"África",
+langPortuguese:"Portugués",langEnglish:"Inglés",langSpanish:"Español",langFrench:"Francés",
+levelNative:"Nativo",levelAdvanced:"Avanzado",levelIntermediate:"Intermedio",levelBasic:"Básico",
+expTitle:"Experiencia Seleccionada",expText:"Una carrera construida en tecnología, servicios financieros, seguros, infraestructura y transformación empresarial.",
+j1role:"Programme & Data Governance Lead",
+j1a:"Liderazgo en DataHub GEN e iniciativas de datos de generación renovable",
+j1b:"Conectando gobierno, delivery, plataformas de datos y stakeholders ejecutivos",
+j1c:"Aplicación de principios de Data & AI Governance a programas de datos del sector energético",
+j2role:"Project Manager / Delivery Manager",
+j2a:"Liderazgo de la transformación de cloud, NOC & SOC para Elementis y 8+ clientes",
+j2b:"Aplicación de SAFe, ITIL y COBIT en entornos regulados",
+j2c:"Gestión de migraciones a Azure, Netskope e implementación de MS365",
+j3role:"Project Manager / Scrum Master",
+j3a:"Dirección de un equipo distribuido de 40 personas en Backend, Frontend y DevOps",
+j3b:"Ejecución de marcos SAFe, Scrum y Kanban",
+j3c:"Gestión de infraestructura: datacenter, cloud, TCP/IP, PowerShell/Python",
+j4role:"Delivery Manager",
+j4a:"Liderazgo de transformación empresarial en servicios financieros regulados",
+j4b:"Actuación como PM & Business Analyst híbrido: requisitos, definición de solución, entrega del programa",
+j4c:"Entrega de la migración CRM Dynamics y BRM de inicio a fin",
+j5role:"Project Manager / Agile Coach",
+j5a:"Liderazgo del Agile Master Team — Tribes de Atención & Retención",
+j5b:"Entrega de la migración de app bancaria nativa: 90 developers, R$80M, 15 meses",
+j5c:"Crecimiento del 20% en cuota de mercado mediante transformación Agile",
+j6role:"Project Manager",
+j6a:"Gestión de la Auditoría de Proyectos LATAM: R$120M, 12 meses",
+j6b:"Implementación de SQL Server en AWS para los productos Pix y Crédito",
+j6c:"Actuación como Agile Coach en métricas de NPS, ROI y Lead Time",
+j7role:"IT Project Manager",
+j7a:"Supervisión de proyectos bancarios de gran escala en infraestructura y cloud (AWS, SQL Server)",
+j7b:"Migración de la Plataforma de Caja: 20 developers, R$150M, 15 meses",
+j7c:"App de Viajes & Reembolsos: 20 developers, R$115M, 9 meses",
+j8role:"Project & Technology Leadership",
+j8a:"Sistema de ingeniería heredado en Oracle: 40 developers, R$215M, 9 meses",
+j8b:"Liderazgo de proyectos y tecnología en salud, sector público, construcción y minería",
+j8c:"Años de base construyendo competencias en programas, entrega y gestión de stakeholders",
+eduEyebrow:"Formación",eduTitle:"Base Académica",eduText:"Aprendizaje continuo en tecnología, estrategia, gestión de proyectos, datos y liderazgo digital.",
+certEyebrow:"Certificaciones Profesionales",
+intlDiploma:"Diploma Internacional",
+footerEyebrow:"Liderar Transformación · Entregar Valor · Construir el Futuro",
+footerTitle:"Disponible para oportunidades ejecutivas en tecnología y transformación.",emailMe:"Enviar email"
+}
+};
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.dataset.i18n;
+    if(i18n[lang] && i18n[lang][k]) el.textContent=i18n[lang][k];
+  });
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  localStorage.setItem("portfolioLang",lang);
+  if(typeof renderPublications==="function") renderPublications(lang);
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+
+/* ---------------- Nav scrollspy ---------------- */
+(function(){
+  const navLinks=Array.from(document.querySelectorAll('.nav-actions a.pill[href^="#"]'));
+  const targets=navLinks.map(a=>document.querySelector(a.getAttribute("href")));
+  function docTop(el){
+    return el.getBoundingClientRect().top + window.scrollY;
+  }
+  function onScroll(){
+    const y=window.scrollY+140;
+    let current=null, bestTop=-Infinity;
+    targets.forEach((t,i)=>{
+      if(!t) return;
+      const top=docTop(t);
+      if(top<=y && top>bestTop){ bestTop=top; current=navLinks[i]; }
+    });
+    navLinks.forEach(a=>a.classList.remove("nav-active"));
+    if(current) current.classList.add("nav-active");
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});
+  onScroll();
+})();
+
+/* ---------------- Workstream donut — click to explore (no default selection) ---------------- */
+const wsCats=["delivery","infra","digital","cyber","appdelivery","data","grc"];
+let wsActive=null;
+function selectWorkstream(cat){
+  wsActive=cat;
+  wsCats.forEach(id=>{
+    const seg=document.getElementById("seg-"+id);
+    const btn=document.querySelector('.legend-btn[data-cat="'+id+'"]');
+    const panel=document.querySelector('.ws-detail[data-cat="'+id+'"]');
+    const active=cat && id===cat;
+    if(seg){ seg.style.opacity=cat?(active?"1":".35"):"1"; seg.setAttribute("stroke-width",active?"33":"28"); }
+    if(btn) btn.classList.toggle("active",active);
+    if(panel) panel.hidden=!active;
+  });
+  const placeholder=document.getElementById("wsPlaceholder");
+  if(placeholder) placeholder.hidden=!!cat;
+}
+document.querySelectorAll(".legend-btn").forEach(b=>b.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  selectWorkstream(wsActive===b.dataset.cat ? null : b.dataset.cat);
+}));
+document.querySelectorAll(".donut-seg").forEach(seg=>{
+  seg.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    const cat=seg.id.replace("seg-","");
+    selectWorkstream(wsActive===cat ? null : cat);
+  });
+});
+document.addEventListener("click",(e)=>{
+  if(wsActive && !e.target.closest(".ws-wrap") && !e.target.closest(".ws-detail")){
+    selectWorkstream(null);
+  }
+});
+selectWorkstream(null);
+
+/* ---------------- Tools & technology line chart ---------------- */
+const brackets=["0–2","2–5","5–10","10–15","15–20","20+"];
+const toolData=[
+  {name:"Jira",         color:"var(--c1)", values:[35,55,72,85,92,97]},
+  {name:"MS Project",   color:"var(--c2)", values:[20,38,58,74,82,89]},
+  {name:"Power BI",     color:"var(--c3)", values:[8,18,38,58,74,85]},
+  {name:"Azure DevOps", color:"var(--c4)", values:[12,28,50,68,80,88]},
+  {name:"ServiceNow",   color:"var(--c5)", values:[30,50,68,80,88,94]},
+  {name:"AWS",          color:"var(--c6)", values:[15,32,55,72,83,90]},
+  {name:"Confluence",   color:"var(--c7)", values:[25,45,64,78,86,92]}
+];
+(function renderToolsChart(){
+  const svg=document.getElementById("toolsSvg");
+  const NS="http://www.w3.org/2000/svg";
+  const padL=40,padR=14,padT=14,padB=32;
+  const w=640,h=300;
+  const plotW=w-padL-padR, plotH=h-padT-padB;
+  const xAt=i=>padL + i*(plotW/(brackets.length-1));
+  const yAt=v=>padT + (100-v)/100*plotH;
+
+  [0,25,50,75,100].forEach(v=>{
+    const y=yAt(v);
+    const line=document.createElementNS(NS,"line");
+    line.setAttribute("x1",padL);line.setAttribute("x2",w-padR);
+    line.setAttribute("y1",y);line.setAttribute("y2",y);
+    line.setAttribute("class","grid-line");
+    svg.appendChild(line);
+    const txt=document.createElementNS(NS,"text");
+    txt.setAttribute("x",padL-8);txt.setAttribute("y",y+3);
+    txt.setAttribute("text-anchor","end");txt.setAttribute("class","axis-label");
+    txt.textContent=v+"%";
+    svg.appendChild(txt);
+  });
+  brackets.forEach((b,i)=>{
+    const txt=document.createElementNS(NS,"text");
+    txt.setAttribute("x",xAt(i));txt.setAttribute("y",h-10);
+    txt.setAttribute("text-anchor","middle");txt.setAttribute("class","axis-label");
+    txt.textContent=b;
+    svg.appendChild(txt);
+  });
+
+  toolData.forEach(tool=>{
+    const pts=tool.values.map((v,i)=>xAt(i)+","+yAt(v)).join(" ");
+    const poly=document.createElementNS(NS,"polyline");
+    poly.setAttribute("points",pts);
+    poly.setAttribute("fill","none");
+    poly.setAttribute("stroke",tool.color);
+    poly.setAttribute("stroke-width","2");
+    poly.setAttribute("stroke-linejoin","round");
+    poly.setAttribute("stroke-linecap","round");
+    svg.appendChild(poly);
+    tool.values.forEach((v,i)=>{
+      const c=document.createElementNS(NS,"circle");
+      c.setAttribute("cx",xAt(i));c.setAttribute("cy",yAt(v));c.setAttribute("r","3.5");
+      c.setAttribute("fill",tool.color);
+      const title=document.createElementNS(NS,"title");
+      title.textContent=tool.name+" — "+v+"% ("+brackets[i]+" yrs)";
+      c.appendChild(title);
+      svg.appendChild(c);
+    });
+  });
+
+  const legend=document.getElementById("toolsLegend");
+  toolData.forEach(tool=>{
+    const item=document.createElement("div");
+    item.className="item";
+    item.innerHTML='<span class="dot" style="background:'+tool.color+'"></span>'+tool.name;
+    legend.appendChild(item);
+  });
+
+  const tbody=document.querySelector("#toolsTable tbody");
+  toolData.forEach(tool=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML="<td>"+tool.name+"</td>"+tool.values.map(v=>"<td>"+v+"%</td>").join("");
+    tbody.appendChild(tr);
+  });
+})();
+
+/* ---------------- Publications list (edit this array to add/update publications) ----------------
+   To add a new publication: copy one block below, paste it at the TOP of the array (most recent first),
+   and fill in the fields. Set featured:true on at most one/two entries that are ALSO hand-written into
+   the navy "Latest Publications" cards above — featured:true hides that entry from the "All Publications"
+   list below so it doesn't show twice. If you promote a new publication to featured, also update the
+   matching pubTitle/pubDesc/DOI (or pub2Title/pub2Desc/pub2DoiLabel) text in the i18n object by hand
+   (that panel is still hand-written, not auto-generated, so its wording stays exact) — and remove
+   featured:true from whichever entry it's replacing so that one reappears in the list below.
+   Leave "url" as null (no link button) if the work has no public link yet. */
+const PUBLICATIONS=[
+  {title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",venue:"Zenodo",date:"14 ago 2026",url:"https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/",desc:"Marques Junior, Carlos Alexandre (Project Manager) — publicação completa disponível no link.",featured:true},
+  {title:"Governança de dados não é projeto de TI — é decisão de negócio",venue:"Zenodo",date:"13 ago 2026",url:"https://doi.org/10.5281/zenodo.21908743",desc:"A crescente adoção de Inteligência Artificial nas organizações reforça a necessidade de tratar a governança de dados como decisão de negócio, não apenas como projeto de TI.",featured:true},
+  {title:"Superando Obstáculos: A Roadmap for Project Managers Seeking High Performance",venue:"Author",date:"22 nov 2024",url:"https://camjr1985.github.io/superando-obstaculos/",desc:"A practical guide focused on overcoming real-world challenges in project management, combining proven frameworks with field experience."},
+  {title:"Jornada Colaborativa: Transitioning to Agility",venue:"Co-Author",date:"30 jun 2023",url:"https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/",desc:"A collaborative work exploring Agile transformation in corporate environments, highlighting best practices, real case scenarios, and the cultural shift required to successfully implement Agile ways of working."},
+  {title:"Gerenciamento de Projetos",venue:"Fundação Getulio Vargas · FGV",date:"28 abr 2015",url:null,desc:"O objetivo do presente trabalho é demonstrar uma perspectiva sobre o novo conceito de gestão de projetos aplicado ao contexto corporativo."},
+  {title:"Resumo Científico: Modelando a Implantação do SOX Sarbanes em TI Utilizando os Frameworks ITIL e COBIT na Empresa de Mineração MASA",venue:"Faculdade Pitágoras",date:"24 jun 2012",url:null,desc:"Síntese: o trabalho consiste na apresentação de uma modelagem de implantação de Governança de TI utilizando os frameworks ITIL e COBIT para atender às normas de conformidade SOX Sarbanes."},
+  {title:"Artigo Científico: Segurança da Informação no Protocolo TCP/IP",venue:"Faculdade Pitágoras",date:"14 dez 2011",url:"https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/",desc:"O protocolo TCP/IP e suas aplicações são tão amplos que há a necessidade de mecanismos de segurança específicos para mitigar suas vulnerabilidades."}
+];
+function renderPublications(lang){
+  const list=document.getElementById("pubList");
+  if(!list) return;
+  const linkLabel=(i18n[lang]&&i18n[lang].pubViewLink)||"View publication";
+  list.innerHTML=PUBLICATIONS.filter(p=>!p.featured).map(p=>
+    '<div class="pub-item">'+
+      '<div class="pub-when">'+p.date+'<span class="venue">'+p.venue+'</span></div>'+
+      '<div><h4>'+p.title+'</h4><p>'+p.desc+'</p>'+
+      (p.url ? '<a class="pub-link" href="'+p.url+'" target="_blank" rel="noopener">'+linkLabel+' →</a>' : '')+
+      '</div>'+
+    '</div>'
+  ).join("");
+}
+
+setLang(localStorage.getItem("portfolioLang")||"en");
+</script>
+</body>
+</html>
