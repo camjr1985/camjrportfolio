@@ -86,6 +86,10 @@
     }
     .contact-row a.book-link{background:var(--gold-bright);color:#241a04;border-color:var(--gold-bright);font-weight:800}
     .contact-row a.book-link:hover{filter:brightness(1.06)}
+    .book-buy{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px 8px;font-size:.82rem;color:#c7d2e2}
+    .footer-buy{margin-top:10px;text-align:right}
+    @media(max-width:900px){.footer-buy{text-align:left}}
+    .book-buy a,.contact-row .book-buy a{display:inline;border:0;padding:0;background:none;border-radius:0;color:var(--gold-bright);font-weight:700;font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
     .metrics-band{background:var(--navy2);padding:22px 0;border-top:1px solid var(--line-dark)}
     .metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
     .metric{text-align:center}
@@ -138,6 +142,8 @@
     .pub-item h4{margin:0 0 6px;font-size:1rem;color:var(--ink)}
     .pub-item p{margin:0;color:var(--muted);font-size:.9rem}
     .pub-item .pub-link{display:inline-block;margin-top:10px;color:var(--gold-ink);font-weight:700;font-size:.86rem}
+    .pub-item .pub-badge{display:inline-block;margin-top:6px;padding:2px 8px;border-radius:999px;border:1px solid var(--gold-ink);color:var(--gold-ink);font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .pub-item .pub-doi-soon{display:inline-block;margin-top:10px;color:var(--gold-ink);font-weight:700;font-size:.86rem}
     @media(max-width:900px){.pub-item{grid-template-columns:1fr}}
 
     /* ---- Expertise (light) ---- */
@@ -286,6 +292,7 @@
       <a href="https://orcid.org/0009-0008-4738-3156" target="_blank" rel="noopener">iD ORCID</a>
       <span class="cta">📍 <span data-i18n="location">São Paulo, Brazil</span></span>
       <a class="book-link" href="https://camjr1985.github.io/superando-obstaculos/" target="_blank" rel="noopener" data-i18n="bookBtn">📘 Author of the book: Superando Obstáculos</a>
+      <span class="book-buy"><span data-i18n="bookKindle">Kindle edition:</span><a href="https://www.amazon.com.br/dp/B0HMP1FTCB" target="_blank" rel="noopener">Amazon.com.br</a>·<a href="https://www.amazon.es/dp/B0HMP1FTCB" target="_blank" rel="noopener">Amazon.es</a></span>
     </div>
     <hr class="gold-rule"/>
     <div class="quote" data-i18n="quote">“I transform strategy into value through leadership, governance and execution excellence.”</div>
@@ -695,10 +702,13 @@
           <h3 data-i18n="footerTitle">Open to executive technology and transformation opportunities.</h3>
           <div class="small"><span data-i18n="location">São Paulo, Brazil</span> · 2026</div>
         </div>
+        <div>
         <div class="pub-actions">
           <a class="cta primary" href="mailto:carlosalexandrejunior@gmail.com" data-i18n="emailMe">Email me</a>
           <a class="cta" href="https://camjr1985.github.io/superando-obstaculos/" target="_blank" rel="noopener" data-i18n="bookBtn">📘 Author of the book: Superando Obstáculos</a>
           <a class="cta" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener">DOI</a>
+        </div>
+        <div class="footer-buy"><span class="book-buy"><span data-i18n="bookKindle">Kindle edition:</span><a href="https://www.amazon.com.br/dp/B0HMP1FTCB" target="_blank" rel="noopener">Amazon.com.br</a>·<a href="https://www.amazon.es/dp/B0HMP1FTCB" target="_blank" rel="noopener">Amazon.es</a></span></div>
         </div>
       </div>
     </div>
@@ -761,7 +771,7 @@ pub2Cta:"View on LinkedIn",
 pubTitle:"Data Governance is not an IT project — it is a business decision",
 pubDesc:"The publication connects Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance and executive decision-making around one central idea: trust is the real data infrastructure of the digital enterprise.",
 readZenodo:"Read on Zenodo",followLinkedIn:"Follow on LinkedIn",viewOrcid:"View ORCID Profile",
-pubListTitle:"All Publications",pubListLinkedIn:"View full list on LinkedIn →",pubViewLink:"View publication",
+pubListTitle:"All Publications",pubListLinkedIn:"View full list on LinkedIn →",pubViewLink:"View publication",pubSoon:"Coming soon",pubExpected:"Expected",pubDoiSoon:"DOI: coming soon",bookKindle:"Kindle edition:",
 expertiseTitle:"Executive Expertise",expertiseText:"A multidisciplinary leadership profile connecting programme governance, digital transformation, data, cloud, cybersecurity and agile execution.",
 toolsEyebrow:"Tools & Technology",toolsTitle:"Experience Level Over Time",
 toolsText:"Proficiency growth across core delivery, cloud and reporting tools as experience accumulates.",
@@ -863,7 +873,7 @@ pub2Cta:"Ver no LinkedIn",
 pubTitle:"Governança de dados não é projeto de TI — é decisão de negócio",
 pubDesc:"A publicação conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance e decisão executiva em torno de uma ideia central: confiança é a verdadeira infraestrutura de dados da empresa digital.",
 readZenodo:"Ler no Zenodo",followLinkedIn:"Seguir no LinkedIn",viewOrcid:"Ver Perfil ORCID",
-pubListTitle:"Todas as Publicações",pubListLinkedIn:"Ver lista completa no LinkedIn →",pubViewLink:"Ver publicação",
+pubListTitle:"Todas as Publicações",pubListLinkedIn:"Ver lista completa no LinkedIn →",pubViewLink:"Ver publicação",pubSoon:"Em breve",pubExpected:"Previsto",pubDoiSoon:"DOI: em breve",bookKindle:"Edição Kindle:",
 expertiseTitle:"Especialidades Executivas",expertiseText:"Um perfil multidisciplinar que conecta governança de programas, transformação digital, dados, cloud, cibersegurança e execução ágil.",
 toolsEyebrow:"Ferramentas & Tecnologia",toolsTitle:"Nível de Experiência ao Longo do Tempo",
 toolsText:"Evolução da proficiência nas principais ferramentas de entrega, cloud e reporting ao longo da experiência.",
@@ -965,7 +975,7 @@ pub2Cta:"Ver en LinkedIn",
 pubTitle:"La gobernanza de datos no es un proyecto de TI — es una decisión de negocio",
 pubDesc:"La publicación conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance y la toma de decisiones ejecutivas en torno a una idea central: la confianza es la verdadera infraestructura de datos de la empresa digital.",
 readZenodo:"Leer en Zenodo",followLinkedIn:"Seguir en LinkedIn",viewOrcid:"Ver Perfil ORCID",
-pubListTitle:"Todas las Publicaciones",pubListLinkedIn:"Ver lista completa en LinkedIn →",pubViewLink:"Ver publicación",
+pubListTitle:"Todas las Publicaciones",pubListLinkedIn:"Ver lista completa en LinkedIn →",pubViewLink:"Ver publicación",pubSoon:"Próximamente",pubExpected:"Previsto",pubDoiSoon:"DOI: próximamente",bookKindle:"Edición Kindle:",
 expertiseTitle:"Especialidades Ejecutivas",expertiseText:"Un perfil multidisciplinario que conecta gobierno de programas, transformación digital, datos, cloud, ciberseguridad y ejecución ágil.",
 toolsEyebrow:"Herramientas & Tecnología",toolsTitle:"Nivel de Experiencia a lo Largo del Tiempo",
 toolsText:"Evolución de la competencia en las principales herramientas de entrega, cloud y reporting a lo largo de la experiencia.",
@@ -1170,8 +1180,23 @@ const toolData=[
    matching pubTitle/pubDesc/DOI (or pub2Title/pub2Desc/pub2DoiLabel) text in the i18n object by hand
    (that panel is still hand-written, not auto-generated, so its wording stays exact) — and remove
    featured:true from whichever entry it's replacing so that one reappears in the list below.
-   Leave "url" as null (no link button) if the work has no public link yet. */
+   Leave "url" as null (no link button) if the work has no public link yet.
+   Upcoming works: set soon:true (shows the "Coming soon" badge, "Expected <date>" and "DOI: coming soon")
+   and give per-language text in i18n:{en:{title,desc},pt:{...},es:{...}} (falls back to en). When the DOI
+   exists, drop soon:true and set url to https://doi.org/... */
 const PUBLICATIONS=[
+  {soon:true,venue:"Zenodo · CC BY 4.0",date:"25 nov 2026",url:null,i18n:{
+    en:{title:"AI Agents with an Owner: Accountability, Limits and Shutdown at Enterprise Scale",desc:"Argues that the main weakness of AI agents at scale is diffuse ownership and proposes the Agent with an Owner model, with five elements starting from a named owner, to settle who answers for an agent, how far it may go and how it is shut down."},
+    pt:{title:"Agentes de IA com dono: accountability, limites e desligamento em escala",desc:"Sustenta que a principal fragilidade dos agentes de IA em escala é o dono difuso e propõe o modelo Agente com Dono, com cinco elementos a partir de um dono nomeado, para definir quem responde pelo agente, até onde ele pode ir e como é desligado."},
+    es:{title:"Agentes de IA con dueño: accountability, límites y apagado a escala",desc:"Sostiene que la principal debilidad de los agentes de IA a escala es la propiedad difusa y propone el modelo Agente con Dueño, con cinco elementos a partir de un dueño con nombre, para definir quién responde por el agente, hasta dónde puede llegar y cómo se apaga."}}},
+  {soon:true,venue:"Zenodo · CC BY 4.0 · PT/EN",date:"17 nov 2026",url:null,i18n:{
+    en:{title:"Dashboards That Drive Decisions: KPIs, Power BI and Data Governance",desc:"Bilingual (PT/EN) essay showing that executive dashboards fail through indicators with no decision attached, numbers with no owner and data models each team rebuilds, and proposing the five-stage From Data to Decision model, from a decision inventory to a trusted Power BI semantic model and a decision ritual."},
+    pt:{title:"Dashboards que geram decisão: KPIs, Power BI e governança de dados",desc:"Ensaio bilíngue (PT/EN) que mostra como painéis executivos falham por indicadores sem decisão associada, números sem dono e modelos de dados reconstruídos por cada equipe, e propõe o modelo Do Dado à Decisão em cinco etapas, do inventário de decisões ao modelo semântico confiável no Power BI e ao ritual de decisão."},
+    es:{title:"Dashboards que generan decisiones: KPIs, Power BI y gobierno de datos",desc:"Ensayo bilingüe (PT/EN) que muestra cómo los paneles ejecutivos fallan por indicadores sin decisión asociada, números sin dueño y modelos de datos que cada equipo reconstruye, y propone el modelo Del Dato a la Decisión en cinco etapas, del inventario de decisiones al modelo semántico confiable en Power BI y al ritual de decisión."}}},
+  {soon:true,venue:"Zenodo · CC BY 4.0",date:"3 nov 2026",url:null,i18n:{
+    en:{title:"A PMO That Creates Value: From Reporting to Decision Partner",desc:"Proposes a three-tier scale (Controller, Integrator, Decision Partner) and four shifts that move a PMO from consolidating status reports to preparing and substantiating investment decisions."},
+    pt:{title:"PMO que gera valor: do relatório ao parceiro de decisão",desc:"Propõe uma escala de três patamares (Controlador, Integrador e Parceiro de decisão) e quatro mudanças para que o PMO deixe de consolidar relatórios de status e passe a preparar e fundamentar decisões de investimento."},
+    es:{title:"Una PMO que genera valor: del informe al socio de decisión",desc:"Propone una escala de tres niveles (Controlador, Integrador y Socio de decisión) y cuatro cambios para que la PMO pase de consolidar informes de estado a preparar y fundamentar decisiones de inversión."}}},
   {title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",venue:"Zenodo",date:"14 ago 2026",url:"https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/",desc:"Marques Junior, Carlos Alexandre (Project Manager) — publicação completa disponível no link.",featured:true},
   {title:"Governança de dados não é projeto de TI — é decisão de negócio",venue:"Zenodo",date:"13 ago 2026",url:"https://doi.org/10.5281/zenodo.21908743",desc:"A crescente adoção de Inteligência Artificial nas organizações reforça a necessidade de tratar a governança de dados como decisão de negócio, não apenas como projeto de TI.",featured:true},
   {title:"Superando Obstáculos: A Roadmap for Project Managers Seeking High Performance",venue:"Author",date:"22 nov 2024",url:"https://camjr1985.github.io/superando-obstaculos/",desc:"A practical guide focused on overcoming real-world challenges in project management, combining proven frameworks with field experience."},
@@ -1183,15 +1208,19 @@ const PUBLICATIONS=[
 function renderPublications(lang){
   const list=document.getElementById("pubList");
   if(!list) return;
-  const linkLabel=(i18n[lang]&&i18n[lang].pubViewLink)||"View publication";
-  list.innerHTML=PUBLICATIONS.filter(p=>!p.featured).map(p=>
-    '<div class="pub-item">'+
-      '<div class="pub-when">'+p.date+'<span class="venue">'+p.venue+'</span></div>'+
-      '<div><h4>'+p.title+'</h4><p>'+p.desc+'</p>'+
+  const t=k=>(i18n[lang]&&i18n[lang][k])||i18n.en[k];
+  const linkLabel=t("pubViewLink")||"View publication";
+  list.innerHTML=PUBLICATIONS.filter(p=>!p.featured).map(p=>{
+    const tx=p.i18n?(p.i18n[lang]||p.i18n.en):p;
+    return '<div class="pub-item'+(p.soon?' soon':'')+'">'+
+      '<div class="pub-when">'+(p.soon?t("pubExpected")+' ':'')+p.date+'<span class="venue">'+p.venue+'</span>'+
+      (p.soon?'<span class="pub-badge">'+t("pubSoon")+'</span>':'')+'</div>'+
+      '<div><h4>'+tx.title+'</h4><p>'+tx.desc+'</p>'+
       (p.url ? '<a class="pub-link" href="'+p.url+'" target="_blank" rel="noopener">'+linkLabel+' →</a>' : '')+
+      (p.soon ? '<span class="pub-doi-soon">'+t("pubDoiSoon")+'</span>' : '')+
       '</div>'+
-    '</div>'
-  ).join("");
+    '</div>';
+  }).join("");
 }
 
 setLang(localStorage.getItem("portfolioLang")||"en");
