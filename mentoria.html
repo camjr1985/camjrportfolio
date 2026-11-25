@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentoria com Carlos Alexandre — Contratar mentoria</title>
+<meta name="description" content="Mentoria de carreira e liderança para profissionais de TI com 10+ anos e diagnóstico de Delivery/PMO para diretores e empresas.">
+<style>
+:root{
+  --navy:#0b1a33;--navy-2:#10264a;--ink:#0b1524;--body-c:#3a4a63;--muted:#5b6b82;
+  --gold:#c9992f;--gold-ink:#8a6414;--gold-bright:#f1c963;--line:#e3e8f0;--soft:#f5f7fb;
+  --c1:#2a78d6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--body-c);background:#fff;line-height:1.55;font-size:16px}
+a{color:inherit}
+.wrap{width:min(1440px,calc(100% - 72px));margin:auto}
+h1,h2,h3{color:var(--ink);line-height:1.15;text-wrap:balance}
+section{padding:44px 0}
+.section-title{margin-bottom:24px}
+.section-title h2{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold-ink);margin-bottom:8px}
+
+/* ---------- Fundo digital (navy + grade + circuito) ---------- */
+.digital{position:relative;background:var(--navy);color:#dfe7f3;overflow:hidden;isolation:isolate}
+.digital::before{content:"";position:absolute;inset:0;z-index:-1;
+  background-image:
+    linear-gradient(rgba(241,201,99,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(241,201,99,.07) 1px,transparent 1px),
+    radial-gradient(circle at 1px 1px,rgba(120,170,255,.35) 1.2px,transparent 1.6px);
+  background-size:48px 48px,48px 48px,24px 24px}
+.digital::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(900px 420px at 85% 10%,rgba(42,120,214,.35),transparent 60%),
+             radial-gradient(700px 380px at 5% 100%,rgba(201,153,47,.18),transparent 60%)}
+.digital h1,.digital h2,.digital h3{color:#fff}
+.digital .eyebrow{color:var(--gold-bright)}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,26,51,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(241,201,99,.18)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700}
+.mono{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold),#e8c46a);color:var(--navy);font-weight:800;font-size:.85rem}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{color:#c9d5e8;text-decoration:none;font-size:.92rem}
+nav ul a:hover{color:var(--gold-bright)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:700;border-radius:999px;padding:12px 22px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(241,201,99,.6)}
+.btn-sm{padding:8px 16px;font-size:.88rem}
+
+/* Hero */
+.hero{padding:64px 0 52px}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.5rem);margin-bottom:16px}
+.hero h1 span{color:var(--gold-bright)}
+.hero p.lead{font-size:1.12rem;color:#c9d5e8;max-width:640px;margin-bottom:26px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.cred{background:rgba(255,255,255,.05);border:1px solid rgba(241,201,99,.25);border-radius:14px;padding:22px}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{padding:14px;border-radius:10px;background:rgba(255,255,255,.04);border-left:3px solid var(--gold)}
+.stat b{display:block;font-size:1.9rem;color:#fff;line-height:1}
+.stat small{color:#b6c3d8;font-size:.84rem}
+
+/* Públicos */
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:12px;padding:24px;background:#fff}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.card ul{padding-left:18px;margin-top:10px}
+.card li{margin:4px 0}
+.unify{margin-top:20px;padding:16px 20px;border-radius:10px;background:var(--soft);border-left:4px solid var(--c1);color:var(--ink)}
+
+/* Ofertas */
+.offers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.offer{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:24px 20px;background:#fff}
+.offer.featured{border:2px solid var(--gold);box-shadow:0 10px 30px rgba(11,26,51,.08)}
+.tag{position:absolute;top:-12px;left:20px;background:var(--gold);color:var(--navy);font-size:.72rem;font-weight:800;letter-spacing:.06em;padding:4px 10px;border-radius:999px;text-transform:uppercase}
+.offer .who{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.offer h3{font-size:1.15rem;margin:6px 0 12px}
+.price{font-size:2rem;font-weight:800;color:var(--ink);line-height:1}
+.price small{font-size:.9rem;font-weight:600;color:var(--muted)}
+.offer .fmt{font-size:.88rem;color:var(--gold-ink);font-weight:600;margin:6px 0 12px}
+.offer ul{list-style:none;flex:1;margin-bottom:16px}
+.offer li{padding:5px 0 5px 22px;position:relative;font-size:.94rem}
+.offer li::before{content:"";position:absolute;left:2px;top:12px;width:10px;height:6px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+.offer .btn{justify-content:center}
+.offer .btn-gold{width:100%}
+.note{margin-top:16px;font-size:.86rem;color:var(--muted)}
+
+/* Como funciona */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{padding:20px;border-radius:12px;background:var(--soft);position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;font-weight:800;font-size:1.4rem;color:var(--gold-ink);margin-bottom:6px}
+.step h3{font-size:1.02rem;margin-bottom:4px}
+.step p{font-size:.92rem}
+
+/* Autoridade + gráfico */
+.auth-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:start}
+.books{display:grid;gap:12px;margin-top:8px}
+.book{display:flex;gap:14px;align-items:center;padding:14px 16px;border:1px solid rgba(241,201,99,.25);border-radius:12px;background:rgba(255,255,255,.04)}
+.book .ico{width:38px;height:48px;border-radius:4px;background:linear-gradient(160deg,var(--gold),#7a5a14);flex:none}
+.book b{color:#fff;display:block}
+.book small{color:#b6c3d8}
+.chart-box{background:#fff;border-radius:14px;padding:22px;color:var(--body-c)}
+.chart-box h3{color:var(--ink);font-size:1.05rem}
+.chart-box .sub{font-size:.85rem;color:var(--muted);margin-bottom:14px}
+.bars{display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 40px;align-items:center;gap:12px;position:relative}
+.bar-row .lbl{font-size:.9rem;color:var(--ink);font-weight:600}
+.track{height:26px;position:relative}
+.fill{height:100%;background:var(--c1);border-radius:0 4px 4px 0;min-width:4px;transition:opacity .15s}
+.bar-row:hover .fill{opacity:.85}
+.bar-row .val{font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.tip{position:absolute;left:162px;top:-34px;background:var(--ink);color:#fff;font-size:.8rem;padding:6px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2}
+.bar-row:hover .tip,.bar-row:focus-within .tip{opacity:1}
+.chart-foot{font-size:.8rem;color:var(--muted);margin-top:14px}
+details.table{margin-top:10px;font-size:.85rem}
+details.table table{border-collapse:collapse;margin-top:8px;width:100%}
+details.table td,details.table th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+
+/* Artigos recentes */
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.art{border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.art .meta{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.art h3{font-size:1rem}
+.art .links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.art .links a{font-size:.82rem;font-weight:700;color:var(--gold-ink);text-decoration:none;border:1px solid #e9d9b0;border-radius:999px;padding:4px 10px}
+
+/* Parceria + CTA */
+.partner{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cta{text-align:center;padding:56px 0}
+.cta h2{font-size:clamp(1.6rem,3vw,2.3rem);margin-bottom:10px}
+.cta p{color:#c9d5e8;margin-bottom:22px}
+.cta .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{font-size:.82rem;color:#8fa0bb;padding:18px 0;border-top:1px solid rgba(241,201,99,.15)}
+
+@media (max-width:1050px){.offers{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.arts{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.wrap{width:calc(100% - 32px)}.hero-grid,.aud,.auth-grid,.partner{grid-template-columns:1fr}.offers,.steps,.arts{grid-template-columns:1fr}nav ul{display:none}.bar-row{grid-template-columns:110px 1fr 34px}.tip{left:120px}}
+
+/* ---------- One-page para PDF (só aparece na impressão) ---------- */
+.onepage{display:none}
+@page{size:A4;margin:0}
+@media print{
+  body > *:not(.onepage){display:none!important}
+  .onepage{display:block;width:210mm;height:297mm;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:9.6pt;line-height:1.42}
+}
+.op-head{padding:12mm 13mm 8mm}
+.op-head .eyebrow{font-size:7.5pt}
+.op-head h1{font-size:23pt;margin:1mm 0 2mm}
+.op-head h1 span{color:var(--gold-bright)}
+.op-head p{color:#c9d5e8;font-size:10pt;max-width:150mm}
+.op-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin-top:6mm}
+.op-stats div{border-left:2px solid var(--gold);padding:1.5mm 2.5mm;background:rgba(255,255,255,.05);border-radius:2mm}
+.op-stats b{display:block;font-size:15pt;color:#fff;line-height:1.05}
+.op-stats small{font-size:7.4pt;color:#b6c3d8}
+.op-body{padding:6mm 13mm 0}
+.op-body h2{font-size:12pt;margin:0 0 2.5mm;color:var(--ink)}
+.op-aud{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:5mm}
+.op-aud div{border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:2mm;padding:3mm 3.5mm}
+.op-aud h3{font-size:10pt;margin-bottom:1mm}
+.op-aud p{font-size:8.8pt}
+table.op-t{width:100%;border-collapse:collapse;margin-bottom:5mm;font-size:9pt}
+.op-t th{background:var(--navy);color:#fff;text-align:left;padding:2.2mm 3mm;font-size:8.4pt;letter-spacing:.03em}
+.op-t td{padding:2.4mm 3mm;border-bottom:1px solid var(--line);vertical-align:top}
+.op-t td.p{font-weight:800;color:var(--ink);white-space:nowrap}
+.op-t tr.hl td{background:#fbf6e8}
+.op-two{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.op-steps{list-style:none;counter-reset:o}
+.op-steps li{counter-increment:o;padding:0 0 1.6mm 7mm;position:relative;font-size:8.8pt}
+.op-steps li::before{content:counter(o);position:absolute;left:0;top:0;width:4.6mm;height:4.6mm;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:7pt;display:grid;place-items:center}
+.op-roles div{padding:2.5mm 3mm;border-radius:2mm;background:var(--soft);margin-bottom:2mm;font-size:8.8pt}
+.op-roles b{color:var(--ink)}
+.op-foot{position:absolute;left:0;right:0;bottom:0;padding:5mm 13mm;display:flex;justify-content:space-between;align-items:center;font-size:8.4pt}
+.op-foot b{color:var(--gold-bright)}
+.onepage{position:relative}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="mono" src="assets/carlos-alexandre-profile.jpg" alt="Carlos Alexandre" style="object-fit:cover;border:2px solid var(--gold)">Carlos Alexandre</a>
+    <ul>
+      <li><a href="index.html">Portfólio</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#autoridade">Publicações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button class="btn btn-gold btn-sm" onclick="window.print()" title="Gera o one page em A4 — escolha 'Salvar como PDF'">⬇ Exportar PDF</button>
+  </div>
+</nav>
+
+<header class="digital hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Mentoria com Carlos Alexandre</div>
+      <h1>Do <span>sênior</span> ao executivo de tecnologia — com quem já fez o caminho.</h1>
+      <p class="lead">Mentoria de carreira e liderança para profissionais de TI com mais de 10 anos de estrada, e diagnóstico de Delivery/PMO para os diretores e donos de empresa que lideram esses profissionais. Um único método, aplicado à pessoa e ao time.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#contato">Agendar sessão de diagnóstico</a>
+        <a class="btn btn-ghost" href="#ofertas">Ver ofertas e valores</a>
+      </div>
+    </div>
+    <div class="cred"><div style="display:flex;align-items:center;gap:14px;margin-bottom:16px"><img src="assets/carlos-alexandre-profile.jpg" alt="Carlos Alexandre Marques Junior" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)"><div><b style="color:#fff;display:block">Carlos Alexandre Marques Jr.</b><small style="color:#b6c3d8">Programas, Delivery e PMO · PMP · SAFe</small></div></div>
+      <div class="cred-grid">
+        <div class="stat"><b>26</b><small>anos em TI, bancos e pagamentos</small></div>
+        <div class="stat"><b>20+</b><small>profissionais mentorados com evolução de carreira</small></div>
+        <div class="stat"><b>2</b><small>livros — 1 como autor, 1 como coautor</small></div>
+        <div class="stat"><b>6</b><small>workshops conduzidos</small></div>
+        <div class="stat"><b>20</b><small>artigos publicados no LinkedIn</small></div>
+        <div class="stat"><b>7</b><small>artigos com DOI no Zenodo</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="para-quem">
+  <div class="wrap">
+    <div class="section-title"><div class="eyebrow">Para quem é</div><h2>Dois públicos, um mesmo método</h2></div>
+    <div class="aud">
+      <div class="card">
+        <h3>Profissional de tecnologia com 10+ anos</h3>
+        <p>Especialistas, gerentes de projeto, tech leads e coordenadores que dominam a técnica, mas sentem que a carreira estagnou.</p>
+        <ul>
+          <li>Posicionamento para cargos de gestão e liderança executiva</li>
+          <li>Transição técnico → gestor → executivo</li>
+          <li>LinkedIn, entrevistas e negociação para posições sênior</li>
+          <li>Carreira internacional (Brasil ⇄ Europa)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Diretores e donos de empresa</h3>
+        <p>Líderes que precisam de previsibilidade nas entregas de tecnologia e de líderes técnicos prontos para assumir mais responsabilidade.</p>
+        <ul>
+          <li>Diagnóstico de maturidade de Delivery, PMO e governança de TI</li>
+          <li>Plano de ação priorizado para os próximos 90 dias</li>
+          <li>Mentoria dos líderes-chave da equipe</li>
+          <li>Governança de dados e adoção responsável de IA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="unify"><b>Por que unificar:</b> o profissional compra a mentoria para si; o diretor compra o mesmo método para o time. A sessão de diagnóstico é a porta de entrada para os dois.</div>
+  </div>
+</section>
+
+<section id="ofertas" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="section-title"><div class="eyebrow">Contratar mentoria</div><h2>Ofertas e investimento</h2></div>
+    <div class="offers">
+      <div class="offer">
+        <div class="who">Porta de entrada</div>
+        <h3>Sessão de Diagnóstico</h3>
+        <div class="price">R$250 <small>/ sessão</small></div>
+        <div class="fmt">1 sessão de 1 hora · online</div>
+        <ul>
+          <li>Mapa do momento de carreira</li>
+          <li>Pontos fortes e lacunas para o próximo nível</li>
+          <li>3 próximos passos objetivos</li>
+        </ul>
+        <a class="btn btn-gold" href="#contato">Agendar diagnóstico</a>
+      </div>
+      <div class="offer featured">
+        <span class="tag">Mais procurada</span>
+        <div class="who">Profissional de TI 10+ anos</div>
+        <h3>Mentoria Individual</h3>
+        <div class="price">R$250 <small>/ hora</small></div>
+        <div class="fmt">Sessões de 1 hora · ritmo semanal ou quinzenal</div>
+        <ul>
+          <li>Plano de carreira com metas e marcos</li>
+          <li>Liderança, comunicação executiva e stakeholders</li>
+          <li>Revisão de LinkedIn, CV e preparação de entrevistas</li>
+          <li>Acompanhamento entre sessões</li>
+        </ul>
+        <a class="btn btn-gold" href="#contato">Quero a mentoria</a>
+      </div>
+      <div class="offer">
+        <div class="who">Turmas · mínimo 5 pessoas</div>
+        <h3>Mentoria em Grupo</h3>
+        <div class="price">R$180 <small>/ aluno · hora</small></div>
+        <div class="fmt">Encontros de 1 hora · turmas fechadas</div>
+        <ul>
+          <li>Temas de carreira e liderança em tecnologia</li>
+          <li>Casos reais e troca entre pares sêniores</li>
+          <li>Networking qualificado</li>
+        </ul>
+        <a class="btn btn-gold" href="#contato">Entrar na próxima turma</a>
+      </div>
+      <div class="offer">
+        <div class="who">Diretores · empresas</div>
+        <h3>Diagnóstico Empresarial + Mentoria de Líderes</h3>
+        <div class="price">R$500 <small>/ hora</small></div>
+        <div class="fmt">Escopo fechado conforme o tamanho da empresa</div>
+        <ul>
+          <li>Diagnóstico de Delivery, PMO e governança de TI</li>
+          <li>Relatório executivo com plano de 90 dias</li>
+          <li>Mentoria dos líderes da equipe</li>
+        </ul>
+        <a class="btn btn-gold" href="#contato">Solicitar proposta</a>
+      </div>
+    </div>
+    <p class="note">Valores em reais (Brasil), por hora de sessão. Pacotes de várias sessões e escopos para empresas são definidos na sessão de diagnóstico.</p>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="section-title"><div class="eyebrow">Como funciona</div><h2>Da conversa inicial ao resultado</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Diagnóstico</h3><p>Uma hora para entender o momento, o objetivo e o que está travando o próximo passo.</p></div>
+      <div class="step"><h3>Plano</h3><p>Metas, marcos e prioridades definidos em conjunto, com formato e frequência sob medida.</p></div>
+      <div class="step"><h3>Sessões</h3><p>Encontros de 1 hora, individuais ou em turma, com tarefas práticas entre eles.</p></div>
+      <div class="step"><h3>Evolução</h3><p>Revisão periódica dos marcos e ajuste de rota até o objetivo ser alcançado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="autoridade" class="digital">
+  <div class="wrap auth-grid">
+    <div>
+      <div class="eyebrow">Autoridade</div>
+      <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:14px">Conhecimento publicado, testado na prática</h2>
+      <p style="margin-bottom:16px">Programas e PMO em bancos e pagamentos (Santander, Credit Suisse, SIBS, Banco Carrefour), indústria e mineração, e migrações cloud na Europa — transformados em livros, artigos e workshops.</p>
+      <div class="books">
+        <div class="book"><span class="ico"></span><div><b>Superando Obstáculos</b><small>Autor · roteiro para gerentes de projeto de alta performance · Amazon Kindle</small></div></div>
+        <div class="book"><span class="ico"></span><div><b>Jornada Colaborativa: Transitioning to Agility</b><small>Coautor · 2023 · transformação ágil em ambientes corporativos</small></div></div>
+      </div>
+    </div>
+    <div class="chart-box">
+      <h3>Artigos publicados por plataforma</h3>
+      <div class="sub">Total acumulado até novembro de 2026</div>
+      <div class="bars" role="img" aria-label="Artigos publicados: 20 no LinkedIn, 7 com DOI no Zenodo, 3 acadêmicos">
+        <div class="bar-row" tabindex="0"><span class="lbl">LinkedIn</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">20</span><span class="tip">20 artigos publicados no LinkedIn</span></div>
+        <div class="bar-row" tabindex="0"><span class="lbl">Zenodo (com DOI)</span><div class="track"><div class="fill" style="width:35%"></div></div><span class="val">7</span><span class="tip">7 artigos científicos com DOI (ago–nov/2026)</span></div>
+        <div class="bar-row" tabindex="0"><span class="lbl">Acadêmicos</span><div class="track"><div class="fill" style="width:15%"></div></div><span class="val">3</span><span class="tip">FGV (2015) e Faculdade Pitágoras (2011, 2012)</span></div>
+      </div>
+      <p class="chart-foot">Os 7 artigos do Zenodo também foram publicados em versão editorial no LinkedIn.</p>
+      <details class="table"><summary>Ver como tabela</summary>
+        <table><tr><th>Plataforma</th><th>Artigos</th></tr><tr><td>LinkedIn</td><td>20</td></tr><tr><td>Zenodo (DOI)</td><td>7</td></tr><tr><td>Acadêmicos</td><td>3</td></tr></table>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="artigos">
+  <div class="wrap">
+    <div class="section-title"><div class="eyebrow">Publicações recentes</div><h2>Últimos artigos</h2></div>
+    <div class="arts" id="arts"></div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="wrap">
+    <div class="section-title"><div class="eyebrow">Parceria</div><h2>Mentoria com Carlos Alexandre · operação Pensare</h2></div>
+    <div class="partner">
+      <div class="card"><h3>Carlos Alexandre</h3><p>Conteúdo, método, condução das sessões e dos workshops e acompanhamento da evolução de cada mentorado.</p></div>
+      <div class="card"><h3>Pensare</h3><p>Estrutura operacional: captação, agendamento, pagamentos, comunicação com os alunos e acompanhamento das aulas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="digital cta">
+  <div class="wrap">
+    <div class="eyebrow">Próximo passo</div>
+    <h2>Comece pela sessão de diagnóstico de 1 hora</h2>
+    <p>Profissional ou empresa: em uma hora você sai com clareza sobre o próximo nível e o caminho até ele.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="mailto:carlosalexandrejunior@gmail.com?subject=Mentoria%20-%20Sess%C3%A3o%20de%20diagn%C3%B3stico">Agendar por e-mail</a>
+      <a class="btn btn-ghost" href="https://wa.me/5511910940909?text=Ol%C3%A1%20Carlos%2C%20quero%20agendar%20a%20sess%C3%A3o%20de%20diagn%C3%B3stico%20da%20mentoria." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/carlos-alexandre-marques-junior/" target="_blank" rel="noopener">Falar no LinkedIn</a>
+      <button class="btn btn-ghost" onclick="window.print()">⬇ Baixar one page (PDF)</button>
+    </div>
+  </div>
+  <footer><div class="wrap">© 2026 Carlos Alexandre Marques Junior · Mentoria com Carlos Alexandre · <a href="index.html">Voltar ao portfólio</a></div></footer>
+</section>
+
+<!-- ================= ONE PAGE A4 (impressão / PDF) ================= -->
+<div class="onepage">
+  <div class="digital op-head">
+    <div class="eyebrow">Mentoria com Carlos Alexandre · Proposta de ofertas</div>
+    <h1>Do <span>sênior</span> ao executivo de tecnologia</h1>
+    <p>Mentoria de carreira e liderança para profissionais de TI com 10+ anos e diagnóstico de Delivery/PMO para diretores e donos de empresa. Um único método, aplicado à pessoa e ao time.</p>
+    <div class="op-stats">
+      <div><b>26</b><small>anos em TI, bancos e pagamentos</small></div>
+      <div><b>20+</b><small>mentorados com evolução de carreira</small></div>
+      <div><b>2</b><small>livros (autor e coautor)</small></div>
+      <div><b>6</b><small>workshops</small></div>
+      <div><b>20</b><small>artigos publicados · 7 com DOI no Zenodo</small></div>
+    </div>
+  </div>
+  <div class="op-body">
+    <h2>Públicos — unificados</h2>
+    <div class="op-aud">
+      <div><h3>Profissional de TI 10+ anos</h3><p>Posicionamento para gestão e liderança executiva, transição técnico → gestor → executivo, LinkedIn, entrevistas e carreira internacional.</p></div>
+      <div><h3>Diretores e donos de empresa</h3><p>Diagnóstico de Delivery, PMO e governança de TI, plano de 90 dias e mentoria dos líderes da equipe.</p></div>
+    </div>
+    <h2>Ofertas e valores (Brasil)</h2>
+    <table class="op-t">
+      <tr><th>Oferta</th><th>Formato</th><th>Para quem</th><th>Valor</th></tr>
+      <tr><td><b>Sessão de Diagnóstico</b></td><td>1 sessão de 1 h · porta de entrada</td><td>Profissionais e empresas</td><td class="p">R$250</td></tr>
+      <tr class="hl"><td><b>Mentoria Individual</b></td><td>Sessões de 1 h · semanal ou quinzenal</td><td>Profissional de TI 10+ anos</td><td class="p">R$250 / h</td></tr>
+      <tr><td><b>Mentoria em Grupo</b></td><td>Encontros de 1 h · turma mín. 5 pessoas</td><td>Profissionais em turma</td><td class="p">R$180 / aluno · h</td></tr>
+      <tr><td><b>Diagnóstico Empresarial + Mentoria de Líderes</b></td><td>Escopo fechado conforme a empresa</td><td>Diretores e donos</td><td class="p">R$500 / h</td></tr>
+    </table>
+    <div class="op-two">
+      <div>
+        <h2>Como funciona</h2>
+        <ol class="op-steps">
+          <li><b>Diagnóstico</b> — 1 h para mapear momento, objetivo e bloqueios.</li>
+          <li><b>Plano</b> — metas, marcos e formato definidos em conjunto.</li>
+          <li><b>Sessões</b> — encontros de 1 h com tarefas práticas.</li>
+          <li><b>Evolução</b> — revisão de marcos e ajuste de rota.</li>
+        </ol>
+        <h2 style="margin-top:3mm">Autoridade</h2>
+        <ol class="op-steps" style="list-style:none">
+          <li><b>Superando Obstáculos</b> (autor) · Amazon Kindle</li>
+          <li><b>Jornada Colaborativa: Transitioning to Agility</b> (coautor)</li>
+          <li>Santander, Credit Suisse, SIBS, Banco Carrefour, Vale</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Divisão de papéis</h2>
+        <div class="op-roles">
+          <div><b>Carlos Alexandre</b> — conteúdo, método, condução das sessões e workshops, acompanhamento da evolução dos mentorados.</div>
+          <div><b>Pensare</b> — estrutura operacional: captação, agendamento, pagamentos, comunicação com os alunos e acompanhamento das aulas.</div>
+        </div>
+        <h2 style="margin-top:3mm">Benchmark de mercado</h2>
+        <div class="op-roles"><div>Mentoria de carreira no Brasil: R$150–500/h (sessão avulsa R$150–350). Consultoria de TI especializada: R$280–500/h; estratégica R$600–1.500/h. Os valores propostos ficam no meio ou abaixo dessas faixas.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="digital op-foot">
+    <span><b>Mentoria com Carlos Alexandre</b> · Carlos Alexandre Marques Junior</span>
+    <span>carlosalexandrejunior@gmail.com · +55 11 91094-0909 · linkedin.com/in/carlos-alexandre-marques-junior</span>
+  </div>
+</div>
+
+<script>
+const RECENT=[
+ {t:"Agentes de IA com dono: accountability, limites e desligamento em escala",d:"Nov 2026",z:"https://zenodo.org/records/24508429",l:"https://www.linkedin.com/pulse/agentes-de-ia-com-dono-quem-responde-pelas-a%C3%A7%C3%B5es-da-marques-junior-tapke/"},
+ {t:"Governança de indicadores para decisões com dados confiáveis",d:"Nov 2026",z:"https://zenodo.org/records/24286203",l:"https://www.linkedin.com/pulse/governan%C3%A7a-de-indicadores-para-decis%C3%B5es-com-dados-marques-junior-euipc/"},
+ {t:"GitHub Copilot na empresa: onde os ganhos de produtividade são reais — e onde podem ser ilusórios",d:"Set 2026",z:"https://zenodo.org/records/22899262",l:"https://www.linkedin.com/pulse/github-copilot-na-empresa-onde-produtividade-%C3%A9-real-e-marques-junior-w9pce/"},
+ {t:"Lakehouse não corrige má governança: a plataforma muda, a accountability precisa vir antes",d:"Set 2026",z:"https://zenodo.org/records/22820309",l:"https://www.linkedin.com/pulse/lakehouse-n%C3%A3o-corrige-m%C3%A1-governan%C3%A7a-plataforma-muda-marques-junior-gxwke/"},
+ {t:"O que aprendi liderando equipas entre Brasil e Portugal",d:"Ago 2026",z:"https://zenodo.org/records/22116623",l:"https://www.linkedin.com/pulse/o-que-aprendi-liderando-equipas-entre-brasil-e-marques-junior-qjs2e/"},
+ {t:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",d:"Ago 2026",z:"https://zenodo.org/records/21931305",l:"https://www.linkedin.com/pulse/zero-trust-falha-nos-primeiros-seis-meses-por-decis%C3%A3o-marques-junior-f8ste/"}
+];
+document.getElementById('arts').innerHTML=RECENT.map(a=>`<article class="art"><div class="meta">${a.d} · Zenodo + LinkedIn</div><h3>${a.t}</h3><div class="links"><a href="${a.z}" target="_blank" rel="noopener">DOI · Zenodo</a><a href="${a.l}" target="_blank" rel="noopener">LinkedIn</a></div></article>`).join('');
+</script>
+</body>
+</html>

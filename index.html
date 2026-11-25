@@ -259,7 +259,30 @@
       .reach-grid{padding:26px 0}
       .footer-grid{grid-template-columns:1fr}
     }
-  </style>
+  
+/* --- Impact (books, articles, workshops, mentees) + Mentoring nav pill --- */
+.pill.pill-mentoring{background:var(--gold);color:#0b1524!important;border-color:var(--gold);font-weight:700}
+#impact{background:#f5f7fb}
+.imp-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:start}
+.imp-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.imp-stat{background:#fff;border:1px solid #e3e8f0;border-top:3px solid var(--gold);border-radius:12px;padding:18px}
+.imp-stat b{display:block;font-size:2.1rem;line-height:1;color:var(--ink);margin-bottom:6px}
+.imp-stat span{font-size:.92rem;color:var(--muted)}
+.imp-chart{background:#fff;border:1px solid #e3e8f0;border-radius:12px;padding:20px}
+.imp-chart h3{color:var(--ink);font-size:1.05rem}
+.imp-sub{font-size:.85rem;color:var(--muted);margin:2px 0 14px}
+.imp-bars{display:grid;gap:12px}
+.imp-row{display:grid;grid-template-columns:130px 1fr 34px;gap:12px;align-items:center;position:relative}
+.imp-lbl{font-weight:600;color:var(--ink);font-size:.9rem}
+.imp-track{height:24px}
+.imp-fill{height:100%;background:var(--c1);border-radius:0 4px 4px 0}
+.imp-row b{color:var(--ink);font-variant-numeric:tabular-nums}
+.imp-tip{position:absolute;left:142px;top:-30px;background:var(--ink);color:#fff;font-size:.78rem;padding:5px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .12s;white-space:nowrap}
+.imp-row:hover .imp-tip,.imp-row:focus .imp-tip{opacity:1}
+.imp-note{font-size:.8rem;color:var(--muted);margin-top:12px}
+.imp-cta{display:inline-block;margin-top:12px;font-weight:700;color:var(--gold-ink);text-decoration:none}
+@media (max-width:820px){.imp-grid{grid-template-columns:1fr}.imp-row{grid-template-columns:100px 1fr 30px}.imp-tip{left:110px}}
+</style>
 </head>
 <body>
 <nav>
@@ -275,6 +298,7 @@
       <a class="pill" href="#experience" data-i18n="navExperience">Experience</a>
       <a class="pill" href="#publication" data-i18n="navPublication">Publication</a>
       <a class="pill" href="#contact" data-i18n="navContact">Contact</a>
+      <a class="pill pill-mentoring" href="mentoria.html" data-i18n="navMentoring">Mentoring</a>
     </div>
   </div>
 </nav>
@@ -498,6 +522,37 @@
   </div>
 </section>
 
+<section id="impact">
+  <div class="wrap">
+    <div class="section-title">
+      <div>
+        <div class="eyebrow" data-i18n="impEyebrow">Beyond Delivery</div>
+        <h2 data-i18n="impTitle">Knowledge Shared</h2>
+      </div>
+      <p data-i18n="impText">Books, research and mentoring.</p>
+    </div>
+    <div class="imp-grid">
+      <div class="imp-stats">
+        <div class="imp-stat"><b>2</b><span data-i18n="impBooks">Books</span></div>
+        <div class="imp-stat"><b>20</b><span data-i18n="impArticles">Articles</span></div>
+        <div class="imp-stat"><b>6</b><span data-i18n="impWorkshops">Workshops</span></div>
+        <div class="imp-stat"><b>20+</b><span data-i18n="impMentees">Mentees</span></div>
+      </div>
+      <div class="imp-chart">
+        <h3 data-i18n="impChartTitle">Articles by platform</h3>
+        <p class="imp-sub" data-i18n="impChartSub">Cumulative, as of November 2026</p>
+        <div class="imp-bars" role="img" aria-label="LinkedIn 20, Zenodo 7, Academic 3">
+          <div class="imp-row" tabindex="0"><span class="imp-lbl">LinkedIn</span><div class="imp-track"><div class="imp-fill" style="width:100%"></div></div><b>20</b><span class="imp-tip">LinkedIn · 20</span></div>
+          <div class="imp-row" tabindex="0"><span class="imp-lbl">Zenodo (DOI)</span><div class="imp-track"><div class="imp-fill" style="width:35%"></div></div><b>7</b><span class="imp-tip">Zenodo (DOI) · 7</span></div>
+          <div class="imp-row" tabindex="0"><span class="imp-lbl" data-i18n="impAcademic">Academic</span><div class="imp-track"><div class="imp-fill" style="width:15%"></div></div><b>3</b><span class="imp-tip">FGV 2015 · Pitágoras 2011, 2012</span></div>
+        </div>
+        <p class="imp-note" data-i18n="impNote">All 7 Zenodo papers also appear on LinkedIn.</p>
+        <a class="imp-cta" href="mentoria.html" data-i18n="impCta">Hire mentoring with Carlos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="publication">
   <div class="wrap">
     <div class="section-title">
@@ -509,25 +564,25 @@
     <div class="wrap pub-cards">
       <div class="pub-card">
         <div class="tagline" data-i18n="trustBefore">TRUST BEFORE INTELLIGENCE</div>
-        <div class="venue-date">Zenodo · 13 ago 2026 · CC BY 4.0</div>
+        <div class="venue-date">Zenodo · 25 nov 2026 · CC BY 4.0</div>
         <h2 data-i18n="pubTitle">Governança de dados não é projeto de TI — é decisão de negócio</h2>
-        <a class="doi" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener">DOI: 10.5281/zenodo.21908743</a>
+        <a class="doi" href="https://doi.org/10.5281/zenodo.24508429" target="_blank" rel="noopener">DOI: 10.5281/zenodo.24508429</a>
         <p data-i18n="pubDesc">The publication connects Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance and executive decision-making around one central idea: trust is the real data infrastructure of the digital enterprise.</p>
         <div class="tags">
-          <span class="tag">Data Governance</span><span class="tag">AI Governance</span><span class="tag">Data Strategy</span><span class="tag">Data Quality</span><span class="tag">Leadership</span>
+          <span class="tag">AI Agents</span><span class="tag">AI Governance</span><span class="tag">Accountability</span><span class="tag">EU AI Act</span><span class="tag">Risk</span>
         </div>
-        <a class="cta primary" href="https://doi.org/10.5281/zenodo.21908743" target="_blank" rel="noopener" data-i18n="readZenodo">Read on Zenodo</a>
+        <a class="cta primary" href="https://doi.org/10.5281/zenodo.24508429" target="_blank" rel="noopener" data-i18n="readZenodo">Read on Zenodo</a>
       </div>
       <div class="pub-card">
         <div class="tagline" data-i18n="pub2Tagline">START WHERE TRUST ALREADY LIVES</div>
-        <div class="venue-date">Zenodo · 14 ago 2026 · CC BY 4.0</div>
+        <div class="venue-date">Zenodo · 16 nov 2026 · CC BY 4.0</div>
         <h2 data-i18n="pub2Title">Zero Trust falha nos primeiros seis meses por decisão errada de onde começar</h2>
-        <a class="doi" href="https://doi.org/10.5281/zenodo.21931305" target="_blank" rel="noopener" data-i18n="pub2DoiLabel">DOI: 10.5281/zenodo.21931305</a>
+        <a class="doi" href="https://doi.org/10.5281/zenodo.24286203" target="_blank" rel="noopener" data-i18n="pub2DoiLabel">DOI: 10.5281/zenodo.24286203</a>
         <p data-i18n="pub2Desc">Zero Trust is often treated as a set of tools: MFA, micro-segmentation, endpoint protection. The paper argues that many programmes fail earlier, in the choice of where to start, and proposes starting where trust is already established and the business impact is visible.</p>
         <div class="tags">
-          <span class="tag">Zero Trust</span><span class="tag">Cybersecurity</span><span class="tag">Programme Governance</span>
+          <span class="tag">KPI Governance</span><span class="tag">Data Ownership</span><span class="tag">Power BI</span>
         </div>
-        <a class="cta primary" href="https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/" target="_blank" rel="noopener" data-i18n="pub2Cta">View on LinkedIn</a>
+        <a class="cta primary" href="https://doi.org/10.5281/zenodo.24286203" target="_blank" rel="noopener" data-i18n="pub2Cta">Read on Zenodo</a>
       </div>
     </div>
     <div class="wrap">
@@ -718,6 +773,7 @@
 /* ---------------- i18n ---------------- */
 const i18n={
 en:{
+navMentoring:"Mentoring",impEyebrow:"Beyond Delivery",impTitle:"Knowledge Shared",impText:"Books, research and mentoring that turn 26 years of programme delivery into practical guidance for the next generation of technology leaders.",impBooks:"Books — 1 author, 1 co-author",impArticles:"Articles published (7 with DOI on Zenodo)",impWorkshops:"Workshops delivered",impMentees:"Professionals mentored with career improvements",impChartTitle:"Articles by platform",impChartSub:"Cumulative, as of November 2026",impAcademic:"Academic",impNote:"All 7 Zenodo papers also appear on LinkedIn in editorial form.",impCta:"Hire mentoring with Carlos →",
 location:"São Paulo, Brazil",bookBtn:"📘 Author of the book: Superando Obstáculos",
 navProjects:"Projects",navExperience:"Experience",navPublication:"Publication",navContact:"Contact",eyebrow:"Senior Executive Profile",
 role:"Senior IT Programme Manager · Digital Transformation · Data & AI Governance · Programme Governance · Agile Delivery",
@@ -759,16 +815,16 @@ wsGrcB2:"ITIL / COBIT frameworks in regulated financial services",
 wsGrcB3:"Steering Committee reporting and executive stakeholder governance",
 hlEyebrow:"Selected Project Highlights",hlTitle:"Enterprise Impact at Scale",
 hlText:"A selection of programmes spanning energy, banking, insurance and technology — with the scope and scale behind each engagement.",
-pubSectionTitle:"Latest Publications",pubSectionText:"The two most recent research-backed executive perspectives — on data governance as a business decision, and on why Zero Trust programmes fail when the starting point is wrong.",
-trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Data Governance",
+pubSectionTitle:"Latest Publications",pubSectionText:"The two most recent research-backed executive perspectives — on who answers for AI agents that act on the organisation's behalf, and on governing KPIs so every area sees the same number.",
+trustBefore:"AN AGENT WITHOUT AN OWNER IS A RISK",pubShort:"Data Governance",
 pubEyebrow:"Scientific & Executive Publication",
-pub2Tagline:"START WHERE TRUST ALREADY LIVES",
-pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
-pub2DoiLabel:"DOI: 10.5281/zenodo.21931305",
-pub2Desc:"Zero Trust is often treated as a set of tools: MFA, micro-segmentation, endpoint protection. The paper argues that many programmes fail earlier, in the choice of where to start, and proposes starting where trust is already established and the business impact is visible.",
-pub2Cta:"View on LinkedIn",
-pubTitle:"Data Governance is not an IT project — it is a business decision",
-pubDesc:"The publication connects Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance and executive decision-making around one central idea: trust is the real data infrastructure of the digital enterprise.",
+pub2Tagline:"ONE KPI, ONE NUMBER",
+pub2Title:"KPI Governance for Decisions Built on Trusted Data",
+pub2DoiLabel:"DOI: 10.5281/zenodo.24286203",
+pub2Desc:"A five-step framework that aligns KPI definitions, data ownership and Power BI implementation, with a one-page KPI contract, so the same indicator stops showing different numbers in each area.",
+pub2Cta:"Read on Zenodo",
+pubTitle:"AI Agents with an Owner: Accountability, Limits and Shutdown at Enterprise Scale",
+pubDesc:"AI agents no longer just suggest — they act. The paper argues their main weakness at scale is diffuse ownership and proposes the Agent with an Owner model: named owner, mandate and limits, human approval points, traceability and tested shutdown.",
 readZenodo:"Read on Zenodo",followLinkedIn:"Follow on LinkedIn",viewOrcid:"View ORCID Profile",
 pubListTitle:"All Publications",pubListLinkedIn:"View full list on LinkedIn →",pubViewLink:"View publication",pubSoon:"Coming soon",pubExpected:"Expected",pubDoiSoon:"DOI: coming soon",bookKindle:"Kindle edition:",
 expertiseTitle:"Executive Expertise",expertiseText:"A multidisciplinary leadership profile connecting programme governance, digital transformation, data, cloud, cybersecurity and agile execution.",
@@ -820,6 +876,7 @@ footerEyebrow:"Leading Transformation · Delivering Value · Building the Future
 footerTitle:"Open to executive technology and transformation opportunities.",emailMe:"Email me"
 },
 pt:{
+navMentoring:"Mentoria",impEyebrow:"Além da entrega",impTitle:"Conhecimento compartilhado",impText:"Livros, pesquisa e mentoria que transformam 26 anos de entrega de programas em orientação prática para a próxima geração de líderes de tecnologia.",impBooks:"Livros — 1 como autor, 1 como coautor",impArticles:"Artigos publicados (7 com DOI no Zenodo)",impWorkshops:"Workshops conduzidos",impMentees:"Profissionais mentorados com evolução de carreira",impChartTitle:"Artigos por plataforma",impChartSub:"Acumulado até novembro de 2026",impAcademic:"Acadêmicos",impNote:"Os 7 artigos do Zenodo também estão no LinkedIn em versão editorial.",impCta:"Contratar mentoria com o Carlos →",
 location:"São Paulo, Brasil",bookBtn:"📘 Autor do livro: Superando Obstáculos",
 navProjects:"Projetos",navExperience:"Experiência",navPublication:"Publicação",navContact:"Contacto",eyebrow:"Perfil Executivo",
 role:"Senior IT Programme Manager · Transformação Digital · Data & AI Governance · Programme Governance · Agile Delivery",
@@ -861,16 +918,16 @@ wsGrcB2:"Frameworks ITIL / COBIT em serviços financeiros regulados",
 wsGrcB3:"Reporting para Steering Committees e governança de stakeholders executivos",
 hlEyebrow:"Projetos em Destaque",hlTitle:"Impacto Empresarial em Escala",
 hlText:"Uma seleção de programas em energia, banca, seguros e tecnologia — com o escopo e a escala por trás de cada projeto.",
-pubSectionTitle:"Publicações Recentes",pubSectionText:"As duas publicações mais recentes com visão executiva fundamentada — sobre governança de dados como decisão de negócio, e sobre por que programas de Zero Trust falham quando o ponto de partida está errado.",
-trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Governança de Dados",
+pubSectionTitle:"Publicações Recentes",pubSectionText:"As duas publicações mais recentes com visão executiva fundamentada — sobre quem responde pelos agentes de IA que agem em nome da organização, e sobre governar indicadores para que todas as áreas vejam o mesmo número.",
+trustBefore:"AGENTE SEM DONO É RISCO",pubShort:"Governança de Dados",
 pubEyebrow:"Publicação Científica & Executiva",
-pub2Tagline:"COMECE ONDE A CONFIANÇA JÁ EXISTE",
-pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
-pub2DoiLabel:"DOI: 10.5281/zenodo.21931305",
-pub2Desc:"Zero Trust costuma ser tratado como um conjunto de ferramentas: MFA, microssegmentação, proteção de endpoints. O artigo sustenta que muitos programas falham antes, na escolha de onde começar, e propõe começar onde a confiança já existe e o impacto no negócio é visível.",
-pub2Cta:"Ver no LinkedIn",
-pubTitle:"Governança de dados não é projeto de TI — é decisão de negócio",
-pubDesc:"A publicação conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance e decisão executiva em torno de uma ideia central: confiança é a verdadeira infraestrutura de dados da empresa digital.",
+pub2Tagline:"UM KPI, UM NÚMERO",
+pub2Title:"Governança de indicadores para decisões com dados confiáveis",
+pub2DoiLabel:"DOI: 10.5281/zenodo.24286203",
+pub2Desc:"Modelo em cinco etapas para alinhar definições de indicadores, responsabilidade pelos dados e implementação em Power BI, com uma ficha de KPI de uma página, para que o mesmo indicador deixe de mostrar números diferentes em cada área.",
+pub2Cta:"Ler no Zenodo",
+pubTitle:"Agentes de IA com dono: accountability, limites e desligamento em escala",
+pubDesc:"Os agentes de IA deixaram de sugerir e passaram a executar. O artigo sustenta que a sua maior fragilidade em escala é o dono difuso e propõe o modelo Agente com Dono: dono nomeado, mandato e limites, aprovação humana, rastreabilidade e desligamento testado.",
 readZenodo:"Ler no Zenodo",followLinkedIn:"Seguir no LinkedIn",viewOrcid:"Ver Perfil ORCID",
 pubListTitle:"Todas as Publicações",pubListLinkedIn:"Ver lista completa no LinkedIn →",pubViewLink:"Ver publicação",pubSoon:"Em breve",pubExpected:"Previsto",pubDoiSoon:"DOI: em breve",bookKindle:"Edição Kindle:",
 expertiseTitle:"Especialidades Executivas",expertiseText:"Um perfil multidisciplinar que conecta governança de programas, transformação digital, dados, cloud, cibersegurança e execução ágil.",
@@ -922,6 +979,7 @@ footerEyebrow:"Liderar Transformação · Entregar Valor · Construir o Futuro",
 footerTitle:"Disponível para oportunidades executivas em tecnologia e transformação.",emailMe:"Enviar email"
 },
 es:{
+navMentoring:"Mentoría",impEyebrow:"Más allá de la entrega",impTitle:"Conocimiento compartido",impText:"Libros, investigación y mentoría que convierten 26 años de entrega de programas en orientación práctica para la próxima generación de líderes de tecnología.",impBooks:"Libros — 1 como autor, 1 como coautor",impArticles:"Artículos publicados (7 con DOI en Zenodo)",impWorkshops:"Workshops impartidos",impMentees:"Profesionales mentorizados con mejoras en su carrera",impChartTitle:"Artículos por plataforma",impChartSub:"Acumulado hasta noviembre de 2026",impAcademic:"Académicos",impNote:"Los 7 artículos de Zenodo también están en LinkedIn en versión editorial.",impCta:"Contratar mentoría con Carlos →",
 location:"São Paulo, Brasil",bookBtn:"📘 Autor del libro: Superando Obstáculos",
 navProjects:"Proyectos",navExperience:"Experiencia",navPublication:"Publicación",navContact:"Contacto",eyebrow:"Perfil Ejecutivo",
 role:"Senior IT Programme Manager · Transformación Digital · Data & AI Governance · Programme Governance · Agile Delivery",
@@ -963,16 +1021,16 @@ wsGrcB2:"Marcos ITIL / COBIT en servicios financieros regulados",
 wsGrcB3:"Reporting para Steering Committees y gobierno de stakeholders ejecutivos",
 hlEyebrow:"Proyectos Destacados",hlTitle:"Impacto Empresarial a Escala",
 hlText:"Una selección de programas en energía, banca, seguros y tecnología — con el alcance y la escala detrás de cada proyecto.",
-pubSectionTitle:"Publicaciones Recientes",pubSectionText:"Las dos publicaciones más recientes con perspectiva ejecutiva fundamentada — sobre el gobierno de datos como decisión de negocio, y sobre por qué los programas de Zero Trust fallan cuando el punto de partida es incorrecto.",
-trustBefore:"TRUST BEFORE INTELLIGENCE",pubShort:"Gobierno de Datos",
+pubSectionTitle:"Publicaciones Recientes",pubSectionText:"Las dos publicaciones más recientes con perspectiva ejecutiva fundamentada — sobre quién responde por los agentes de IA que actúan en nombre de la organización, y sobre gobernar indicadores para que todas las áreas vean el mismo número.",
+trustBefore:"UN AGENTE SIN DUEÑO ES UN RIESGO",pubShort:"Gobierno de Datos",
 pubEyebrow:"Publicación Científica & Ejecutiva",
-pub2Tagline:"EMPIECE DONDE YA EXISTE CONFIANZA",
-pub2Title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",
-pub2DoiLabel:"DOI: 10.5281/zenodo.21931305",
-pub2Desc:"Zero Trust suele tratarse como un conjunto de herramientas: MFA, microsegmentación, protección de endpoints. El artículo sostiene que muchos programas fracasan antes, en la elección de por dónde empezar, y propone comenzar donde la confianza ya existe y el impacto en el negocio es visible.",
-pub2Cta:"Ver en LinkedIn",
-pubTitle:"La gobernanza de datos no es un proyecto de TI — es una decisión de negocio",
-pubDesc:"La publicación conecta Data Ownership, Data Quality, Data Products, Data Contracts, AI Governance y la toma de decisiones ejecutivas en torno a una idea central: la confianza es la verdadera infraestructura de datos de la empresa digital.",
+pub2Tagline:"UN KPI, UN NÚMERO",
+pub2Title:"Gobernanza de indicadores para decisiones con datos confiables",
+pub2DoiLabel:"DOI: 10.5281/zenodo.24286203",
+pub2Desc:"Un modelo en cinco etapas para alinear definiciones de indicadores, responsabilidad sobre los datos e implementación en Power BI, con una ficha de KPI de una página, para que el mismo indicador deje de mostrar números distintos en cada área.",
+pub2Cta:"Leer en Zenodo",
+pubTitle:"Agentes de IA con dueño: accountability, límites y apagado a escala",
+pubDesc:"Los agentes de IA ya no solo sugieren: ejecutan. El artículo sostiene que su mayor debilidad a escala es la propiedad difusa y propone el modelo Agente con Dueño: dueño con nombre, mandato y límites, aprobación humana, trazabilidad y apagado probado.",
 readZenodo:"Leer en Zenodo",followLinkedIn:"Seguir en LinkedIn",viewOrcid:"Ver Perfil ORCID",
 pubListTitle:"Todas las Publicaciones",pubListLinkedIn:"Ver lista completa en LinkedIn →",pubViewLink:"Ver publicación",pubSoon:"Próximamente",pubExpected:"Previsto",pubDoiSoon:"DOI: próximamente",bookKindle:"Edición Kindle:",
 expertiseTitle:"Especialidades Ejecutivas",expertiseText:"Un perfil multidisciplinario que conecta gobierno de programas, transformación digital, datos, cloud, ciberseguridad y ejecución ágil.",
@@ -1184,11 +1242,11 @@ const toolData=[
    and give per-language text in i18n:{en:{title,desc},pt:{...},es:{...}} (falls back to en). When the DOI
    exists, drop soon:true and set url to https://doi.org/... */
 const PUBLICATIONS=[
-  {venue:"Zenodo · CC BY 4.0",date:"25 nov 2026",url:"https://doi.org/10.5281/zenodo.24508429",i18n:{
+  {featured:true,venue:"Zenodo · CC BY 4.0",date:"25 nov 2026",url:"https://doi.org/10.5281/zenodo.24508429",i18n:{
     en:{title:"AI Agents with an Owner: Accountability, Limits and Shutdown at Enterprise Scale",desc:"Argues that the main weakness of AI agents at scale is diffuse ownership and proposes the Agent with an Owner model, with five elements starting from a named owner, to settle who answers for an agent, how far it may go and how it is shut down."},
     pt:{title:"Agentes de IA com dono: accountability, limites e desligamento em escala",desc:"Sustenta que a principal fragilidade dos agentes de IA em escala é o dono difuso e propõe o modelo Agente com Dono, com cinco elementos a partir de um dono nomeado, para definir quem responde pelo agente, até onde ele pode ir e como é desligado."},
     es:{title:"Agentes de IA con dueño: accountability, límites y apagado a escala",desc:"Sostiene que la principal debilidad de los agentes de IA a escala es la propiedad difusa y propone el modelo Agente con Dueño, con cinco elementos a partir de un dueño con nombre, para definir quién responde por el agente, hasta dónde puede llegar y cómo se apaga."}}},
-  {title:"Governança de indicadores para decisões com dados confiáveis",venue:"Zenodo",date:"16 nov 2026",url:"https://doi.org/10.5281/zenodo.24286203",desc:"Modelo em cinco etapas para alinhar definições de indicadores, responsabilidade pelos dados e implementação em Power BI, para que o mesmo KPI deixe de aparecer com números diferentes em cada área."},
+  {featured:true,title:"Governança de indicadores para decisões com dados confiáveis",venue:"Zenodo",date:"16 nov 2026",url:"https://doi.org/10.5281/zenodo.24286203",desc:"Modelo em cinco etapas para alinhar definições de indicadores, responsabilidade pelos dados e implementação em Power BI, para que o mesmo KPI deixe de aparecer com números diferentes em cada área."},
   {soon:true,venue:"Zenodo · CC BY 4.0",date:"dez 2026",url:null,i18n:{
     en:{title:"A PMO That Creates Value: From Reporting to Decision Partner",desc:"Proposes a three-tier scale (Controller, Integrator, Decision Partner) and four shifts that move a PMO from consolidating status reports to preparing and substantiating investment decisions."},
     pt:{title:"PMO que gera valor: do relatório ao parceiro de decisão",desc:"Propõe uma escala de três patamares (Controlador, Integrador e Parceiro de decisão) e quatro mudanças para que o PMO deixe de consolidar relatórios de status e passe a preparar e fundamentar decisões de investimento."},
@@ -1197,8 +1255,8 @@ const PUBLICATIONS=[
   {title:"Lakehouse não corrige má governança: a plataforma muda, a accountability precisa vir antes",venue:"Zenodo",date:"17 set 2026",url:"https://doi.org/10.5281/zenodo.22820309",desc:"Mostra que a convergência da arquitetura Lakehouse não resolve a questão anterior à tecnologia: quem tem autoridade sobre o significado, a qualidade e o acesso aos dados."},
   {title:"O que aprendi liderando equipas entre Brasil e Portugal",venue:"Zenodo",date:"26 ago 2026",url:"https://doi.org/10.5281/zenodo.22116623",desc:"Diferenças de comunicação, decisão, feedback e reuniões entre equipas no Brasil e em Portugal, e como adaptar a liderança sem perder objetivos e critérios."},
   {title:"Superando Obstáculos — Apresentação da Primeira Edição",venue:"Zenodo · Report",date:"20 ago 2026",url:"https://doi.org/10.5281/zenodo.22035965",desc:"Material oficial de apresentação do livro Superando Obstáculos: experiências, aprendizados e ferramentas de mais de duas décadas em tecnologia e gestão de projetos, no Brasil e na Europa."},
-  {title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",venue:"Zenodo",date:"14 ago 2026",url:"https://doi.org/10.5281/zenodo.21931305",desc:"Marques Junior, Carlos Alexandre (Project Manager) — publicação completa disponível no link.",featured:true},
-  {title:"Governança de dados não é projeto de TI — é decisão de negócio",venue:"Zenodo",date:"13 ago 2026",url:"https://doi.org/10.5281/zenodo.21908743",desc:"A crescente adoção de Inteligência Artificial nas organizações reforça a necessidade de tratar a governança de dados como decisão de negócio, não apenas como projeto de TI.",featured:true},
+  {title:"Zero Trust falha nos primeiros seis meses por decisão errada de onde começar",venue:"Zenodo",date:"14 ago 2026",url:"https://doi.org/10.5281/zenodo.21931305",desc:"Argumenta que muitos programas de Zero Trust falham antes da escolha tecnológica, na decisão sobre onde começar, e propõe priorizar fluxos críticos, identidades e acessos privilegiados."},
+  {title:"Governança de dados não é projeto de TI — é decisão de negócio",venue:"Zenodo",date:"13 ago 2026",url:"https://doi.org/10.5281/zenodo.21908743",desc:"A crescente adoção de Inteligência Artificial nas organizações reforça a necessidade de tratar a governança de dados como decisão de negócio, não apenas como projeto de TI."},
   {title:"Superando Obstáculos: A Roadmap for Project Managers Seeking High Performance",venue:"Author",date:"22 nov 2024",url:"https://camjr1985.github.io/superando-obstaculos/",desc:"A practical guide focused on overcoming real-world challenges in project management, combining proven frameworks with field experience."},
   {title:"Jornada Colaborativa: Transitioning to Agility",venue:"Co-Author",date:"30 jun 2023",url:"https://www.linkedin.com/in/carlos-alexandre-marques-junior/details/publications/",desc:"A collaborative work exploring Agile transformation in corporate environments, highlighting best practices, real case scenarios, and the cultural shift required to successfully implement Agile ways of working."},
   {title:"Gerenciamento de Projetos",venue:"Fundação Getulio Vargas · FGV",date:"28 abr 2015",url:null,desc:"O objetivo do presente trabalho é demonstrar uma perspectiva sobre o novo conceito de gestão de projetos aplicado ao contexto corporativo."},
